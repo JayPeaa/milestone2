@@ -1,5 +1,7 @@
 //jQuery
 
+//demo code to demonstrate how to use animate css and Jquery
+
 $(function() {
 
 var animationName = "animated shake";
