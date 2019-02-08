@@ -1,0 +1,273 @@
+/*---START OF BODY-----*/
+
+body {
+    margin: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0;
+    padding-top: 50px;
+    color: black;
+    font-size: 18px;
+    text-align: justify;
+}
+
+p,
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p {
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: black;
+}
+
+
+
+.general-paragraph {
+    text-align: justify;
+}
+
+/*----END OF BODY------*/
+
+
+
+
+/*-------START OF NAV-------*/
+
+.navbar-nav>li>a {
+    text-align: center;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin: .5em;
+    padding: 1em;
+    padding-bottom: 0;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: green;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+    color: green;
+}
+
+.navbar-brand {
+    font-size: 2em;
+    margin-top: 0.5em;
+    padding-top: .2em;
+    padding-left: 1em;
+    color: white !important;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.navbar-brand:hover {
+    color: green !important;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 20px 20px;
+    margin-top: 8px;
+    margin-right: 45px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#myNavbar {
+    border-bottom: solid;
+    border-color: #9a5688;
+    padding: 0;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+    background-color: transparent;
+}
+
+.navlogo {
+    margin: .4em;
+    padding: 0;
+}
+
+.navbar-collapse {
+    border: none !important;
+}
+
+/*-------END OF NAV --------*/
+
+/*-----------START OF FOOTER---------------*/
+
+.footer-container {
+    text-align: center;
+    background-color: #101010;
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-size: 1.2em;
+    padding-top: 0.5em;
+    padding-bottom: 0;
+    border-top: solid;
+    border-color: silver;
+}
+
+.social-footer {
+    margin-bottom: -0.1em;
+    color: white;
+}
+
+.footer-text {
+    color: white;
+}
+
+.social-links {
+    font-size: 2em;
+    text-align: center;
+    background-color: #101010;
+    margin: 0;
+    padding-bottom: .5em;
+}
+
+.fa {
+    color: silver;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.fa:hover {
+    color: green;
+
+}
+
+.container.subscribe-container {
+    text-align: center;
+    margin-top: 2.5em;
+    align-items: center;
+}
+
+/*-----------END OF FOOTER---------------*/
+
+/*---------START OF BUTTON EFFECTS------*/
+
+.btn {
+    border-radius: 10px;
+    background-color: white;
+    border: 3px solid;
+    color: black;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-bottom: 18px;
+}
+
+.btn:hover {
+    border-radius: 10px;
+    background-color: black;
+    border: 3px solid;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+
+
+
+/*---------END OF BUTTON EFFECTS------*/
+
+/*------START OF CONTACT US SECTION-------*/
+
+
+.contact-us-form {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.form-control {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-bottom: 1.5em;
+}
+
+.contact-form-address-section-border {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: white;
+    padding-top: 2em;
+    padding: 1.5em;
+    background: rgba(0, 0, 0, 0.5);
+    height: 600px;
+}
+
+.contact-form-border {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: white;
+    padding-top: 2em;
+    padding: 1.5em;
+    background: rgba(0, 0, 0, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+}
+
+/*--------END OF CONTACT US SECTION-------*/
+
+/*--------CHARTS CAROUSELL AND API--------*/
+/*-----------BOOTSTRAP PLACEMENT-------*/
+
+.carousell{
+    margin:3px;
+    min-height: 300px;
+    background-color: silver;
+    text-align: center;
+    font-size: large; 
+}
+
+
+.charts{
+    margin:3px;
+    min-height: 300px;
+    background-color: silver;
+    text-align: center;
+    font-size: large; 
+}
+
+.video{
+    margin:3px;
+    min-height: 300px;
+    text-align: center;
+}
+
+.about-us-text{
+    margin:3px;
+    min-height: 300px;
+    background-color: silver;
+}
+
