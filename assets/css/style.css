@@ -242,12 +242,14 @@ p {
 /*--------CHARTS CAROUSELL AND API--------*/
 /*-----------BOOTSTRAP PLACEMENT-------*/
 
-.carousell{
-    margin:3px;
-    min-height: 300px;
-    background-color: silver;
+
+
+
+#the-slider{
     text-align: center;
     font-size: large; 
+    width: 600px;
+    
 }
 
 
