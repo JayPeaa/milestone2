@@ -114,6 +114,12 @@ p {
     border: none !important;
 }
 
+a.active {
+  text-decoration: underline;
+  color: green !important;
+}
+
+
 /*-------END OF NAV --------*/
 
 /*-----------START OF FOOTER---------------*/
@@ -131,7 +137,7 @@ p {
 }
 
 .social-footer {
-    margin-bottom: -0.1em;
+    /*margin-bottom: -0.1em;*/
     color: white;
 }
 
