@@ -38,11 +38,10 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Our Work</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li id="home-menu" class="active"><a href="#home">Home</a></li>
+                    <li id="about-menu"><a href="#about">About Us</a></li>
+                    <li id="dashboard-menu"><a href="#dashboard">Dashboard</a></li>
+                    <li id="contact-menu"><a href="#contactus">Contact Us</a></li>
                 </ul>
 
             </div>
@@ -51,7 +50,7 @@
 
     <!--Start of Jumbotron in Header-->
 
-    <header class="container-fluid jumbotron">
+    <header id="home" class="container-fluid jumbotron">
         <div class="row">
             <div class="col-xs-12 ">
                 <div class="text-center hero-text-container">
@@ -67,11 +66,13 @@
 
     <!--About Us Container-->
 
-    <h1>About Inequality Awareness</h1>
+    
     <article class="container">
         <div class="row">
+            <div class="col-md-12">
+                <h1  id="about"><br><br>About Inequality Awareness</h1>
+            </div>
             <div class="col-md-6">
-
                 <p class="general-paragraph about-us-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt exercitationem neque molestias, dolores dolore inventore accusamus, architecto totam id delectus dolorem laudantium ut maiores perspiciatis beatae vero officia ea, in. </p>
             </div>
             <div class="col-md-6">
@@ -132,7 +133,7 @@
 
     <!--Dashboard -->
 
-    <h2>What do the number tell us?</h2>
+    <h2 id="dashboard"><br><br><br>What do the number tell us?</h2>
     <h3>Dashboard</h3>
     <section class="container ">
         <div class="row ">
@@ -159,17 +160,13 @@
                 <div class="charts ">charts</div>
             </div>
         </div>
-    </section>
-
-
-
-
+    </section >
 
     <!--Contact Us Containers and Bootstrap Grid-->
 
-    <article class="container contact-us-container ">
+    <article id="contactus" class="container contact-us-container">
 
-        <h2 class="text-uppercase " id="contactus "> Contact Us </h2>
+        <h2 class="text-uppercase"> <br><br><br>Contact Us </h2>
         <p>If you would like further information on the issues riased on this site then get in touch.</p>
 
     </article>
@@ -194,15 +191,10 @@
                         <input type="text " name="name " class="form-control " id="fullname " placeholder="Name " required/>
                         <input type="text " name="emailaddress " class="form-control " id="emailaddress " placeholder="Email address " required/>
                         <textarea rows="5 " name="projectsummary " class="form-control " id="projectsummary " placeholder="Enter your message here " required></textarea>
-                        <div class="contact-approval-radio ">
-                            <h3>I am happy to be contacted via email</h3>
-                            <h2>Yes <input type="radio " name="radio "></h2>
-                            <h2>No <input type="radio " name="radio "></h2>
-                        </div>
+                        
                         <button type="submit " class="btn center-block ">Send Message</button>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>

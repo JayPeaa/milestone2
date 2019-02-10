@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 /*---START OF BODY-----*/
 
 body {
