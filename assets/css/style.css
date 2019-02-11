@@ -2,6 +2,20 @@ html{
     scroll-behavior: smooth;
 }
 
+
+.header-image{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.jumbotron{
+    padding: 0;
+    margin: 0;
+}
+
+
+
 /*---START OF BODY-----*/
 
 body {
@@ -115,8 +129,7 @@ p {
 }
 
 a.active {
-  text-decoration: underline;
-  color: green !important;
+   color: green !important;
 }
 
 

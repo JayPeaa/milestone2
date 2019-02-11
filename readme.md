@@ -122,3 +122,5 @@ The vendor folder contains any 3rd party assets such as photos, video and audio 
 All images and media used on this site have been labelled for reuse / non-commercial and are for educational purposes only.  Google images licensing tools
 have been utilised in sourcing content where content has not been provided by the code institute specifically. Express consent has been attained via email
 for any other 3rd party content.
+
+Credit for header image: By Sanjiban ghosh - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=37475284
