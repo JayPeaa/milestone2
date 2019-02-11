@@ -1,18 +1,36 @@
-html{
+html {
     scroll-behavior: smooth;
 }
 
+/*---------Header Styling ----------*/
 
-.header-image{
-    width: 100%;
-    padding: 0;
-    margin: 0;
+.header-title {
+    margin-top: .5em;
+    color: white !important;
 }
 
-.jumbotron{
+.header-paragraph {
+    margin-top: 20em;
+    color: white;
+}
+
+.jumbotron {
     padding: 0;
     margin: 0;
+    background-image: url("../vendor/images/header-image.jpg");
+    background-position: center;
+    background-size: cover;
+    border-bottom: solid;
+    border-color: silver;
+    font-size: 5em;
+    color: silver;
+    min-height: 800px;
 }
+
+
+
+
+
 
 
 
@@ -27,20 +45,21 @@ body {
     color: black;
     font-size: 18px;
     text-align: justify;
+    background-color: #f4f4f4;
 }
 
 p,
 h1,
 h2,
 h3 {
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-align: center;
 }
 
 p {
     text-transform: none;
     font-weight: normal;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: black;
 }
 
@@ -52,15 +71,12 @@ p {
 
 /*----END OF BODY------*/
 
-
-
-
 /*-------START OF NAV-------*/
 
 .navbar-nav>li>a {
     text-align: center;
     font-size: 1em;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin: .5em;
     padding: 1em;
     padding-bottom: 0;
@@ -74,11 +90,11 @@ p {
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
-    color: green;
+    color: #fec606;
 }
 
 .navbar-inverse .navbar-nav>.active>a {
-    color: green;
+    color: #fec606;
 }
 
 .navbar-brand {
@@ -93,7 +109,7 @@ p {
 }
 
 .navbar-brand:hover {
-    color: green !important;
+    color: #fec606 !important;
 }
 
 .navbar-toggle {
@@ -129,7 +145,7 @@ p {
 }
 
 a.active {
-   color: green !important;
+    color: #fec606 !important;
 }
 
 
@@ -151,11 +167,11 @@ a.active {
 
 .social-footer {
     /*margin-bottom: -0.1em;*/
-    color: white;
+    color: silver;
 }
 
 .footer-text {
-    color: white;
+    color: silver;
 }
 
 .social-links {
@@ -174,7 +190,7 @@ a.active {
 }
 
 .fa:hover {
-    color: green;
+    color: #fec606;
 
 }
 
@@ -224,7 +240,6 @@ a.active {
 
 /*------START OF CONTACT US SECTION-------*/
 
-
 .contact-us-form {
     margin-left: auto;
     margin-right: auto;
@@ -263,36 +278,37 @@ a.active {
 /*--------END OF CONTACT US SECTION-------*/
 
 /*--------CHARTS CAROUSELL AND API--------*/
+
 /*-----------BOOTSTRAP PLACEMENT-------*/
 
-
-
-
-#the-slider{
+#the-slider {
     text-align: center;
-    font-size: large; 
+    font-size: large;
     width: 600px;
-    
+
 }
 
 
-.charts{
-    margin:3px;
+.charts {
+    margin: 3px;
     min-height: 300px;
-    background-color: silver;
+    background-color: white;
     text-align: center;
-    font-size: large; 
+    font-size: large;
 }
 
-.video{
-    margin:3px;
+.video {
+    margin: 3px;
     min-height: 300px;
     text-align: center;
 }
 
-.about-us-text{
-    margin:3px;
+.about-us-text {
+    margin: 5px;
+    padding: 5px;
     min-height: 300px;
-    background-color: silver;
+    background-color: white;
+    -webkit-box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
 }
-
