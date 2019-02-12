@@ -251,10 +251,10 @@
         <p>Sign up for regular updates on the issues of global inequality.</p>
 
 
-        <form class="form-inline justify-content-center">
-            <input type="text" required="true" class="form-control" placeholder="First Name">
-            <input type="text" required="true" class="form-control" placeholder="Last Name">
-            <input type="email" required="true" class="form-control" placeholder="Email">
+        <form class="form-inline justify-content-center" onsubmit="return submitEmailSubscription(this);" method="POST">
+            <input type="text" required="true" class="form-control" name="first_name" placeholder="First Name">
+            <input type="text" required="true" class="form-control" name="last_name" placeholder="Last Name">
+            <input type="email" required="true" class="form-control" name="email_subscribed" placeholder="Email">
             <button class="btn"><i class="fa fa-envelope"></i>  Submit</button>
         </form>
     </section>
