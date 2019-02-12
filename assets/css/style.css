@@ -299,7 +299,7 @@ a.active {
 .charts {
     margin: 3px;
     min-height: 300px;
-    background-color: silver;
+    background-color: white;
     text-align: center;
     font-size: large;
 }
