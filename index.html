@@ -23,6 +23,9 @@
     <script type="text/javascript" src="assets/js/queue.min.js"></script>
     <script type="text/javascript" src="assets/js/graph.js"></script>
 
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/customJqry.js"></script>
 
@@ -180,16 +183,18 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="charts api-text">
-                <h1>Text</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae vitae sapiente, quam nam quaerat, libero aspernatur labore! Consequatur ullam eligendi, quos vel accusamus voluptas officia laudantium delectus eius error, sunt ab commodi illum nobis ex voluptatem ipsum voluptates laborum nulla blanditiis dolores tempora labore animi. Laboriosam, voluptatem. Similique quaerat, voluptatibus repellendus illo dolorem. Nisi sunt tempore ipsam ad dolores officia, fugiat beatae blanditiis neque quidem eum error quos facilis ipsa adipisci cupiditate numquam omnis harum dolor accusamus, temporibus totam. Aliquam.</p>
+                    <h1>Text</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae vitae sapiente, quam nam quaerat, libero aspernatur labore! Consequatur ullam eligendi, quos vel accusamus voluptas officia laudantium delectus eius error, sunt ab commodi
+                        illum nobis ex voluptatem ipsum voluptates laborum nulla blanditiis dolores tempora labore animi. Laboriosam, voluptatem. Similique quaerat, voluptatibus repellendus illo dolorem. Nisi sunt tempore ipsam ad dolores officia, fugiat
+                        beatae blanditiis neque quidem eum error quos facilis ipsa adipisci cupiditate numquam omnis harum dolor accusamus, temporibus totam. Aliquam.</p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
-                <div class="charts google-api">
+                <div class=" row charts">
                     <h1>Google Maps</h1>
-                    </div>
+                    <div id="map" class="charts google-api"></div>
+                </div>
             </div>
-        </div>
     </section>
 
     <!--Contact Us Containers and Bootstrap Grid-->
@@ -264,6 +269,11 @@
             </p>
         </div>
     </footer>
+
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJZOqPZW-S62102GNDCDlkGH1-EhyOAJE&callback=initMap"></script>
+    <script type="text/javascript" src="assets/js/google.maps.js"></script>
 
     <!--Bootstrap CDN -->
 
