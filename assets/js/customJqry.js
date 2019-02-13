@@ -52,6 +52,12 @@ var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimation
     })
 
   });
+  
+  $("form").on("submit", function(event){
+      event.preventDefault();
+      console.log("hello");
+  })
+  
 });
     
 });

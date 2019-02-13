@@ -214,7 +214,7 @@ a.active {
 /*---------START OF BUTTON EFFECTS------*/
 
 .btn {
-    border-radius: 10px;
+    
     background-color: white;
     border: 3px solid;
     color: black;
@@ -227,13 +227,12 @@ a.active {
     -o-transition: 0.3s;
     transition: 0.3s;
     cursor: pointer;
-    margin-bottom: 18px;
+    margin-bottom: 34px;
 }
 
 .btn:hover {
-    border-radius: 10px;
     background-color: #e51f5e;
-    border: 3px solid;
+    border: 3px solid grey;
     color: white;
     font-size: 15px;
     letter-spacing: 2px;
@@ -295,7 +294,7 @@ a.active {
 #the-slider {
     text-align: center;
     font-size: large;
-    width: 100%;
+    max-width: 100%;
 
 }
 
@@ -311,6 +310,7 @@ a.active {
 .video {
     margin: 3px;
     min-height: 300px;
+    max-width:100%;
     text-align: center;
 }
 
