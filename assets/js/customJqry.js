@@ -44,6 +44,8 @@ var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimation
       
       // This is the bit of code that uses the currentSection as its source of ID
       var id = $currentSection.attr('id');
+   	 
+   	 
    	 $('a').removeClass('active');
    	 $(`a[href="#${id}"]`).addClass("active");
       
