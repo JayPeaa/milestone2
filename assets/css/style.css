@@ -6,6 +6,7 @@ font-family: 'PT Serif', serif;*/
 
 html {
     scroll-behavior: smooth;
+    
 }
 
 /*---------Header Styling ----------*/
@@ -82,6 +83,10 @@ p {
 /*----END OF BODY------*/
 
 /*-------START OF NAV-------*/
+
+.navbar-nav{
+    margin: 0;
+}
 
 .navbar-nav>li>a {
     text-align: center;
@@ -225,7 +230,7 @@ a.active {
     padding-right: 10px;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
-    transition: 0.3s;
+    transition: 0.5s;
     cursor: pointer;
     margin-bottom: 34px;
 }
@@ -240,6 +245,49 @@ a.active {
     padding-right: 10px;
     cursor: pointer;
 }
+
+.fa-arrow-down {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 50%;
+    border-color: white;
+    margin-top: 0.5em;
+    text-shadow: none;
+    font-size: 30px;
+    -webkit-animation-name: flashing;
+    animation-name: flashing;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes flashing {
+    from {
+        color: transparent;
+        border-color: #9a5688;
+    }
+
+    to {
+        color: #9a5688;
+        border-color: white;
+    }
+}
+
+@keyframes flashing {
+    from {
+        color: transparent;
+        border-color: #9a5688;
+    }
+
+    to {
+        color: #9a5688;
+        border-color: white;
+    }
+}
+
 
 
 
