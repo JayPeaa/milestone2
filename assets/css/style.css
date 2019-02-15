@@ -17,26 +17,21 @@ html {
 }
 
 .header-paragraph {
-    margin-top: 20em;
+    margin-top: 10em;
     color: white;
 }
 
 .jumbotron {
     padding: 0;
     margin: 0;
-    background-image: url("../vendor/images/header-image.jpg");
-    background-position: center;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../vendor/images/header-image.jpg") no-repeat center center fixed;
     background-size: cover;
     border-bottom: solid;
     border-color: silver;
-    font-size: 5em;
-    color: silver;
-    min-height: 800px;
+    font-size: 6em;
+    color: white;
+    height: 100vh;
 }
-
-
-
-
 
 
 
@@ -64,7 +59,7 @@ h3 {
 }
 
 p {
-    font-family: 'PT Serif', serif;
+    font-family: 'Mukta', serif;
     text-transform: none;
     font-weight: normal;
     letter-spacing: 1px;
@@ -221,13 +216,13 @@ a.active {
 .btn {
     
     background-color: white;
+    border-radius: 25px;
     border: 3px solid;
-    color: black;
+    color: #f20025;
     font-size: 15px;
+    font-weight: bolder;
     letter-spacing: 2px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.5s;
@@ -236,13 +231,13 @@ a.active {
 }
 
 .btn:hover {
-    background-color: #e51f5e;
+    background-color: #f20025;
+    border-radius: 25px;
     border: 3px solid grey;
     color: white;
     font-size: 15px;
     letter-spacing: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     cursor: pointer;
 }
 
@@ -262,6 +257,7 @@ a.active {
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
+    
 }
 
 @-webkit-keyframes flashing {
@@ -349,7 +345,8 @@ a.active {
 
 .charts {
     margin: 3px;
-    min-height: 300px;
+    min-height: 400px;
+    width:100%;
     background-color: white;
     text-align: center;
     font-size: large;
