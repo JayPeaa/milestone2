@@ -17,13 +17,20 @@ html {
 
 .header-title {
     margin-top: .5em;
+    margin-bottom: 0;
     color: white !important;
 }
 
 .header-paragraph {
-    margin-top: 10em;
+    margin-top: 8em;
     color: white;
+    margin-bottom: 0;
 }
+
+.slogan{
+    margin: 0;
+}
+
 
 .jumbotron {
     padding: 0;
@@ -231,7 +238,7 @@ a.active {
     -o-transition: 0.3s;
     transition: 0.5s;
     cursor: pointer;
-    margin-bottom: 34px;
+    margin-bottom: 0;
 }
 
 .btn:hover {
@@ -245,12 +252,16 @@ a.active {
     cursor: pointer;
 }
 
+.suscribe-btn{
+    margin-bottom: 34px;
+}
+
 .fa-arrow-down {
     border-style: solid;
     border-width: 3px;
     border-radius: 50%;
     border-color: white;
-    margin-top: 0.5em;
+    margin-top: 0;
     text-shadow: none;
     font-size: 30px;
     -webkit-animation-name: flashing;
@@ -332,6 +343,7 @@ a.active {
     -moz-box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
 }
+
 
 /*--------END OF CONTACT US SECTION-------*/
 
@@ -433,3 +445,6 @@ a.active {
 
 }
 
+.x-axis-label{
+    padding-top: 6px;
+}

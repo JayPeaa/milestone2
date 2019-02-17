@@ -14,6 +14,7 @@ function makeGraphs(error, salesData) {
         show_sales_by_category(ndx);
         show_sales_by_chain(ndx);
         show_sales_by_chain_line(ndx);
+        show_sales_by_month(ndx);
 
         dc.renderAll();
 
@@ -107,6 +108,24 @@ function makeGraphs(error, salesData) {
             .x(d3.scale.ordinal())
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Chain")
+            .yAxis().ticks(15);
+
+    }
+    
+    function show_sales_by_month(ndx) {
+        var dim = ndx.dimension(dc.pluck("Month"));
+        var group = dim.group();
+
+        dc.barChart("#chart5")
+            .width(400)
+            .height(300)
+            .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+            .dimension(dim)
+            .group(group)
+            .transitionDuration(500)
+            .x(d3.scale.ordinal())
+            .xUnits(dc.units.ordinal)
+            .xAxisLabel("Month")
             .yAxis().ticks(15);
 
     }
