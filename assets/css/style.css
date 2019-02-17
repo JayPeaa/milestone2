@@ -9,6 +9,10 @@ html {
     
 }
 
+.row{
+    margin: 0;
+}
+
 /*---------Header Styling ----------*/
 
 .header-title {
@@ -343,13 +347,14 @@ a.active {
 }
 
 
-.charts {
+#map {
     margin: 3px;
-    min-height: 400px;
+    min-height: 350px;
     width:100%;
     background-color: white;
     text-align: center;
     font-size: large;
+    
 }
 
 .video {
@@ -390,8 +395,41 @@ a.active {
     background-color: white;
 }
 
-#map{
+.google-maps-section{
     height: 100%;
-    margin: 0;
+    margin-top: 5em;
+    background-color: white;
+    box-shadow: 3px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    padding:1.5em;
+    
+}
+
+.carousel-control.left,
+.carousel-control.right{
+    background-image: none;
+}
+
+.about-us-row {
+    padding-bottom: 2.5em;
+    background-color: white;
+    box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    margin-top: 2.5em;
+    padding-top: .5em;
+}
+
+.carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: block;
+    max-width: 100%;
+    min-height: 300px;
+}
+
+.dashboard{
+    background-color: white;
+    padding-bottom: 2.5em;
+    background-color: white;
+    box-shadow: 3px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    margin-top: 2.5em;
+    padding-top: 2.5em;
+
 }
 
