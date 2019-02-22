@@ -22,9 +22,9 @@ function makeGraphs(error, salesData) {
 
     function show_sales_by_state(ndx) {
         var dim = ndx.dimension(dc.pluck("State"));
-        var group = dim.group();
+        var group = dim.group().reduceSum(dc.pluck('Sales'));
 
-        let barColors = d3.scale.ordinal().range(["red", "yellow", "blue", "pink"])
+        let barColors = d3.scale.ordinal().range(["#EA3500", "#FEC928", "#8CE888", "#093F9B", "#282828"])
 
         dc.barChart("#chart0")
             .width(400)
@@ -33,7 +33,7 @@ function makeGraphs(error, salesData) {
                 return d.key
             })
             .colors(barColors)
-            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -50,12 +50,18 @@ function makeGraphs(error, salesData) {
 
     function show_sales_by_manager(ndx) {
         var dim = ndx.dimension(dc.pluck("Manager"));
-        var group = dim.group();
+        var group = dim.group().reduceSum(dc.pluck('Sales'));
+        
+        let barColors = d3.scale.ordinal().range(["#EA3500", "#EA3500", "#8CE888", "#8CE888", "#FEC928", "#FEC928", "#093F9B", "#282828"])
 
         dc.barChart("#chart1")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
+            .colorAccessor(function(d) {
+                return d.key
+            })
+            .colors(barColors)
+            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -70,12 +76,18 @@ function makeGraphs(error, salesData) {
 
     function show_sales_by_category(ndx) {
         var dim = ndx.dimension(dc.pluck("Category"));
-        var group = dim.group();
+        var group = dim.group().reduceSum(dc.pluck('Sales'));
+        
+        let barColors = d3.scale.ordinal().range(["#282828"])
 
         dc.barChart("#chart2")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
+            .colorAccessor(function(d) {
+                return d.key
+            })
+            .colors(barColors)
+            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -90,12 +102,18 @@ function makeGraphs(error, salesData) {
 
     function show_sales_by_chain(ndx) {
         var dim = ndx.dimension(dc.pluck("Chain"));
-        var group = dim.group();
+        var group = dim.group().reduceSum(dc.pluck('Sales'));
+        
+        let barColors = d3.scale.ordinal().range(["#093F9B", "#8CE888"])
 
         dc.barChart("#chart3")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
+            .colorAccessor(function(d) {
+                return d.key
+            })
+            .colors(barColors)
+            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -109,12 +127,18 @@ function makeGraphs(error, salesData) {
 
     function show_sales_by_chain_line(ndx) {
         var dim = ndx.dimension(dc.pluck("Chain"));
-        var group = dim.group();
+        var group = dim.group().reduceSum(dc.pluck('Sales'));
+        
+        let barColors = d3.scale.ordinal().range(["#093F9B", "#8CE888"])
 
         dc.barChart("#chart4")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
+            .colorAccessor(function(d) {
+                return d.key
+            })
+            .colors(barColors)
+            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -134,12 +158,18 @@ function makeGraphs(error, salesData) {
 
     function show_sales_by_month(ndx) {
         var dim = ndx.dimension(dc.pluck("Financial Year"));
-        var group = dim.group();
+        var group = dim.group().reduceSum(dc.pluck('Sales'));
+        
+        let barColors = d3.scale.ordinal().range(["#282828"])
 
         dc.barChart("#chart5")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
+            .colorAccessor(function(d) {
+                return d.key
+            })
+            .colors(barColors)
+            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
