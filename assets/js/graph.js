@@ -6,7 +6,7 @@ function makeGraphs(error, salesData) {
     var ndx = crossfilter(salesData);
 
     salesData.forEach(function(d) {
-        d.sales = parseInt(d.Sales);
+        d.sales = parseFloat(d.Sales);
 
 
         show_sales_by_state(ndx);
@@ -24,17 +24,27 @@ function makeGraphs(error, salesData) {
         var dim = ndx.dimension(dc.pluck("State"));
         var group = dim.group();
 
+        let barColors = d3.scale.ordinal().range(["red", "yellow", "blue", "pink"])
+
         dc.barChart("#chart0")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+            .colorAccessor(function(d) {
+                return d.key
+            })
+            .colors(barColors)
+            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
             .x(d3.scale.ordinal())
             .xUnits(dc.units.ordinal)
             .xAxisLabel("State")
-            .yAxis().ticks(15);
+            .yAxisLabel("Sales in £'s")
+            .yAxis().ticks(10);
+            
+
+
 
     }
 
@@ -45,14 +55,15 @@ function makeGraphs(error, salesData) {
         dc.barChart("#chart1")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
             .x(d3.scale.ordinal())
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Manager")
-            .yAxis().ticks(15);
+            .yAxisLabel("Sales in £'s")
+            .yAxis().ticks(10);
 
 
     }
@@ -64,14 +75,15 @@ function makeGraphs(error, salesData) {
         dc.barChart("#chart2")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
             .x(d3.scale.ordinal())
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Category")
-            .yAxis().ticks(15);
+            .yAxisLabel("Sales in £'s")
+            .yAxis().ticks(10);
 
 
     }
@@ -83,14 +95,15 @@ function makeGraphs(error, salesData) {
         dc.barChart("#chart3")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
             .x(d3.scale.ordinal())
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Chain")
-            .yAxis().ticks(15);
+            .yAxisLabel("Sales in £'s")
+            .yAxis().ticks(10);
 
     }
 
@@ -101,32 +114,41 @@ function makeGraphs(error, salesData) {
         dc.barChart("#chart4")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
             .x(d3.scale.ordinal())
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Chain")
-            .yAxis().ticks(15);
+            .yAxisLabel("Sales in £'s")
+            .yAxis().ticks(10);
 
     }
-    
+
+
+
+
+
+
+
     function show_sales_by_month(ndx) {
-        var dim = ndx.dimension(dc.pluck("Month"));
+        var dim = ndx.dimension(dc.pluck("Financial Year"));
         var group = dim.group();
 
         dc.barChart("#chart5")
             .width(400)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 50 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
             .x(d3.scale.ordinal())
             .xUnits(dc.units.ordinal)
-            .xAxisLabel("Month")
-            .yAxis().ticks(15);
+            .xAxisLabel("Financial Year")
+            .yAxisLabel("Sales in £'s")
+            .yAxis().ticks(10);
+
 
     }
 }

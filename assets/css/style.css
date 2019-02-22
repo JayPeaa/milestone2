@@ -397,9 +397,6 @@ a.active {
     background-color: white;
 }
 
-.about-us-row{
-    padding-bottom: 2.5em;
-}
 
 #video{
     padding-top: 7px;
@@ -427,6 +424,15 @@ a.active {
     box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
     margin-top: 2.5em;
     padding-top: .5em;
+     min-height: 620px;
+}
+
+.about-us-row2 {
+    padding-bottom: 2.5em;
+    background-color: white;
+    box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    margin-top: 2.5em;
+    padding-top: .5em;
 }
 
 .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
@@ -445,6 +451,20 @@ a.active {
 
 }
 
+.chart-title{
+    text-align: center;
+    font-weight: bold;
+}
+
 .x-axis-label{
     padding-top: 6px;
 }
+
+div.dc-chart {
+    float: none; 
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2em;
+    padding-top: 1em;
+}
+
