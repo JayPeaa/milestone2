@@ -1,20 +1,22 @@
 function initMap() {
     var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 3,
+        zoom: 4,
         center: {
-            lat: 46.619261,
-            lng: -33.134766
+            lat: 50.736129,
+            lng: -1.988229
         }
     });
 
     var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     var locations = [
-        { lat: 51.51475, lng: -0.14608 },
-        { lat: 51.859126, lng: -4.311591 },
-        { lat: 55.953346, lng: -3.188374 },
-        { lat: 50.725562, lng: -3.526911 },
-        { lat: 52.6286, lng: 1.29227 },
+        { lat: 51.51475, lng: -0.14608 }, //London
+        { lat: 51.859126, lng: -4.311591 }, //Carmarthen
+        { lat: 55.953346, lng: -3.188374 }, //Edinburgh
+        { lat: 50.725562, lng: -3.526911 }, //Exeter
+        { lat: 52.6286, lng: 1.29227 }, //Norwhich
+        { lat: 54.597, lng: -5.9301 },  //Belfast
+        { lat: 54.9919, lng: -7.3168 }, //Londonderry
 
     ];
 

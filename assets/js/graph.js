@@ -6,7 +6,7 @@ function makeGraphs(error, salesData) {
     var ndx = crossfilter(salesData);
 
     salesData.forEach(function(d) {
-        d.sales = parseFloat(d.Sales);
+        d.sales = parseInt(d.Sales);
 
 
         show_sales_by_state(ndx);
@@ -27,13 +27,13 @@ function makeGraphs(error, salesData) {
         let barColors = d3.scale.ordinal().range(["#EA3500", "#FEC928", "#8CE888", "#093F9B", "#282828"])
 
         dc.barChart("#chart0")
-            .width(400)
+            .width(360)
             .height(300)
             .colorAccessor(function(d) {
                 return d.key
             })
             .colors(barColors)
-            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 65 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -55,13 +55,13 @@ function makeGraphs(error, salesData) {
         let barColors = d3.scale.ordinal().range(["#EA3500", "#EA3500", "#8CE888", "#8CE888", "#FEC928", "#FEC928", "#093F9B", "#282828"])
 
         dc.barChart("#chart1")
-            .width(400)
+            .width(360)
             .height(300)
             .colorAccessor(function(d) {
                 return d.key
             })
             .colors(barColors)
-            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 65 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -78,16 +78,16 @@ function makeGraphs(error, salesData) {
         var dim = ndx.dimension(dc.pluck("Category"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
         
-        let barColors = d3.scale.ordinal().range(["#282828"])
+        let barColors = d3.scale.ordinal().range(["#4C73B6"])
 
         dc.barChart("#chart2")
-            .width(400)
+            .width(360)
             .height(300)
             .colorAccessor(function(d) {
                 return d.key
             })
             .colors(barColors)
-            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 65 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -107,13 +107,13 @@ function makeGraphs(error, salesData) {
         let barColors = d3.scale.ordinal().range(["#093F9B", "#8CE888"])
 
         dc.barChart("#chart3")
-            .width(400)
+            .width(360)
             .height(300)
             .colorAccessor(function(d) {
                 return d.key
             })
             .colors(barColors)
-            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
+           .margins({ top: 10, right: 50, bottom: 40, left: 65 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -132,13 +132,13 @@ function makeGraphs(error, salesData) {
         let barColors = d3.scale.ordinal().range(["#093F9B", "#8CE888"])
 
         dc.barChart("#chart4")
-            .width(400)
+            .width(360)
             .height(300)
             .colorAccessor(function(d) {
                 return d.key
             })
             .colors(barColors)
-            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
+           .margins({ top: 10, right: 50, bottom: 40, left: 65 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
@@ -160,16 +160,16 @@ function makeGraphs(error, salesData) {
         var dim = ndx.dimension(dc.pluck("Financial Year"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
         
-        let barColors = d3.scale.ordinal().range(["#282828"])
+        let barColors = d3.scale.ordinal().range(["#4C73B6"])
 
         dc.barChart("#chart5")
-            .width(400)
+            .width(360)
             .height(300)
             .colorAccessor(function(d) {
                 return d.key
             })
             .colors(barColors)
-            .margins({ top: 10, right: 50, bottom: 40, left: 80 })
+            .margins({ top: 10, right: 50, bottom: 40, left: 65 })
             .dimension(dim)
             .group(group)
             .transitionDuration(500)
