@@ -135,9 +135,9 @@ function makeGraphs(error, salesData) {
 
 
         dc.lineChart("#chart4")
-            .width(1000)
+            .width(450)
             .height(300)
-            .margins({ top: 10, right: 50, bottom: 40, left: 65 })
+            .margins({ top: 10, right: 10, bottom: 40, left: 65 })
             .dimension(month_dim)
             .group(total_sales_per_month)
             .transitionDuration(500)
