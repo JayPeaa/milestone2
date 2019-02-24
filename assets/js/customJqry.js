@@ -1,5 +1,11 @@
 //jQuery
 
+$(function(){
+    $('.chart-title').hide();
+});
+
+
+
 //demo code to demonstrate how to use animate css and Jquery
 
 $(function() {
@@ -23,7 +29,7 @@ $(function() {
 
 
     $(document).ready(function() {
-
+    
         var $sections = $('.nav-container');
         $(window).scroll(function() {
 

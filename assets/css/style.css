@@ -468,3 +468,11 @@ div.dc-chart {
     padding-top: 1em;
 }
 
+#preloader {
+    background-image: url(../vendor/images/loading.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+}

@@ -2,23 +2,40 @@ queue()
     .defer(d3.csv, "assets/data/storeSales.csv")
     .await(makeGraphs);
 
+
+
 function makeGraphs(error, salesData) {
     var ndx = crossfilter(salesData);
+    var all = ndx.groupAll();
+
+    var financialYearChart = dc.barChart("#chart0");
+    var consolidatedMonthlySales = dc.lineChart("#chart6");
+    var compositeChart = dc.compositeChart("#chart4");
+    var chainPieChart = dc.pieChart("#chart3");
+    var salesByCategory = dc.barChart("#chart5");
+    var salesByManager = dc.barChart("#chart2");
+    var salesByCountry = dc.barChart("#chart1");
+    //var recordCount = dc.dataCount(".dc-data-count");
+    //var recordTable = dc.dataTable(".dc-data-table");
+
+    show_sales_by_state(ndx);
+    show_sales_by_manager(ndx);
+    show_sales_by_category(ndx);
+    show_sales_by_chain(ndx);
+    show_sales_by_chain_line(ndx);
+    show_sales_by_month(ndx);
+    show_consolidated_sales_line(ndx);
 
     salesData.forEach(function(d) {
-        d.sales = parseInt(d.Sales);
-
-
-        show_sales_by_state(ndx);
-        show_sales_by_manager(ndx);
-        show_sales_by_category(ndx);
-        show_sales_by_chain(ndx);
-        show_sales_by_chain_line(ndx);
-        show_sales_by_month(ndx);
-
-        dc.renderAll();
+        d.sales = parseInt(d.Sales)
 
     })
+
+
+    dc.renderAll();
+    $('#preloader').fadeOut('slow');
+    $('.chart-title').fadeIn('slow');
+    
 
     function show_sales_by_state(ndx) {
         var dim = ndx.dimension(dc.pluck("Region"));
@@ -26,7 +43,8 @@ function makeGraphs(error, salesData) {
 
         let barColors = d3.scale.ordinal().range(["#EA3500", "#FEC928", "#8CE888", "#093F9B", "#282828"])
 
-        dc.barChart("#chart1")
+
+        salesByCountry
             .width(360)
             .height(300)
             .colorAccessor(function(d) {
@@ -54,7 +72,8 @@ function makeGraphs(error, salesData) {
 
         let barColors = d3.scale.ordinal().range(["#EA3500", "#EA3500", "#8CE888", "#8CE888", "#FEC928", "#FEC928", "#093F9B", "#282828"])
 
-        dc.barChart("#chart2")
+
+        salesByManager
             .width(360)
             .height(300)
             .colorAccessor(function(d) {
@@ -80,7 +99,8 @@ function makeGraphs(error, salesData) {
 
         let barColors = d3.scale.ordinal().range(["#4C73B6"])
 
-        dc.barChart("#chart5")
+
+        salesByCategory
             .width(360)
             .height(300)
             .colorAccessor(function(d) {
@@ -106,7 +126,8 @@ function makeGraphs(error, salesData) {
 
         let barColors = d3.scale.ordinal().range(["#093F9B", "#8CE888"])
 
-        dc.pieChart("#chart3")
+
+        chainPieChart
             .height(300)
             .radius(130)
             .colorAccessor(function(d) {
@@ -133,8 +154,57 @@ function makeGraphs(error, salesData) {
         var minDate = month_dim.bottom(1)[0].Month;
         var maxDate = month_dim.top(1)[0].Month;
 
+        var newYouSales = month_dim.group().reduceSum(function(d) {
+            if (d.Chain === "New You") {
+                return d.Sales;
+            }
+            else {
+                return 0;
+            }
+        });
 
-        dc.lineChart("#chart4")
+        var freshLookSales = month_dim.group().reduceSum(function(d) {
+            if (d.Chain === "Fresh Look") {
+                return d.Sales;
+            }
+            else {
+                return 0;
+            }
+        });
+
+
+        compositeChart
+            .width(450)
+            .height(300)
+            .margins({ top: 10, right: 10, bottom: 40, left: 65 })
+            .dimension(month_dim)
+            .x(d3.time.scale().domain([minDate, maxDate]))
+            .yAxisLabel("Sales in £'s")
+            .legend(dc.legend().x(80).y(20).itemHeight(12).gap(5))
+            .renderHorizontalGridLines(true)
+            .compose([
+                dc.lineChart(compositeChart)
+                .colors('green')
+                .group(newYouSales, "New You"),
+                dc.lineChart(compositeChart)
+                .colors('red')
+                .group(freshLookSales, "Fesh Look")
+            ])
+
+            .brushOn(false)
+
+    }
+
+    function show_consolidated_sales_line(ndx) {
+
+        var month_dim = ndx.dimension(dc.pluck("Month"));
+        var total_sales_per_month = month_dim.group().reduceSum(dc.pluck("Sales"));
+
+        var minDate = month_dim.bottom(1)[0].Month;
+        var maxDate = month_dim.top(1)[0].Month;
+
+
+        consolidatedMonthlySales
             .width(450)
             .height(300)
             .margins({ top: 10, right: 10, bottom: 40, left: 65 })
@@ -151,16 +221,15 @@ function makeGraphs(error, salesData) {
 
 
 
-
-
-
     function show_sales_by_month(ndx) {
         var dim = ndx.dimension(dc.pluck("Financial Year"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
         let barColors = d3.scale.ordinal().range(["#4C73B6"])
 
-        dc.barChart("#chart0")
+
+
+        financialYearChart
             .width(360)
             .height(300)
             .colorAccessor(function(d) {
@@ -179,4 +248,28 @@ function makeGraphs(error, salesData) {
 
 
     }
+
+
+    /*  recordCount
+      .dimension(ndx)
+      .group(all);
+
+      recordTable
+      .dimension(month_dim)
+      .group(function(d) {
+          var format = d3.format('02d');
+          return d.Month.getFullYear() + '/' + format((d.Month.getMonth() + 1));
+      })
+      .columns([
+          "Month",
+          "Financial Year",
+          "Chain",
+          "Region",
+          "Manager",
+          "Category",
+          "Sales"
+      ])*/
+
+
+
 }

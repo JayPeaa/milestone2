@@ -35,12 +35,14 @@
 
     <!--Animation and Nav Coding -->
     <script type="text/javascript" src="assets/js/customJqry.js"></script>
+    <script type="text/javascript" src="assets/js/customJscript.js"></script>
 
 </head>
 
 <body id="home" class="nav-container">
 
     <!--NAV Bar-->
+
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -176,11 +178,20 @@ Your browser does not support the video tag.
         <h2><br><br><br>What do the number tell us? <br></h2>
         <h3>Dashboard<br></h3>
     </div>
-    <section class="container-fluid dashboard">
+
+    <section class="container-fluid dashboard" id="status">
+
+        <!-- Pre Loader -->
+        <div id="preloader">
+        </div>
+
         <div class="row ">
             <div class="col-md-4 col-sm-12">
                 <p class="chart-title">Sales By Year</p>
                 <div id="chart0" class="charts"></div>
+                <span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
+                <a class="reset" href="javascript:financialYearChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+                <div class="clearfix"></div>
             </div>
             <div class="col-md-4 col-sm-12">
                 <p class="chart-title">Sales by Area</p>
@@ -205,6 +216,23 @@ Your browser does not support the video tag.
                 <div id="chart5" class="charts"></div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <p class="table">Data Table</p>
+                <div>
+                    <div class="dc-data-count">
+                        <span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+                    </div>
+                </div>
+                <table class="table table-hover dc-data-table">
+                </table>
+
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <p class="chart-title">Consolidated Sales by Period</p>
+                <div id="chart6" class="charts"></div>
+            </div>
+        </div>
     </section>
     <section class="container google-maps-section">
         <div class="row">
@@ -212,8 +240,8 @@ Your browser does not support the video tag.
                 <div class="charts api-text">
 
                     <p class="general-paragraph"><br>In addition to simply setting you up with the dashboard we also offer a complete website design and integration service. We can integrate various APIs to add additional value to your site. The google maps API is an example of this
-                        Here we are highlighting all the stores in the two chains, 'Fresh Look' and 'New You'. This highlights the various store locations so customers know where to find you. <br><br>Google can also provide your business with a number of benefits for free. Register your business with Google Business and
-                        take advantage of some free advertising. Google will also display your business information such as contact phone numbers and office opening hours.</p>
+                        Here we are highlighting all the stores in the two chains, 'Fresh Look' and 'New You'. This highlights the various store locations so customers know where to find you. <br><br>Google can also provide your business with a number
+                        of benefits for free. Register your business with Google Business and take advantage of some free advertising. Google will also display your business information such as contact phone numbers and office opening hours.</p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
@@ -315,6 +343,8 @@ Your browser does not support the video tag.
     <!--Link to senEmail.js file-->
 
     <script src="assets/js/sendEmail.js"></script>
+
+    
 
 </body>
 
