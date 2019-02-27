@@ -41,6 +41,7 @@ function makeGraphs(error, salesData) {
     $('.chart-title').fadeIn('slow');
     $('.table').fadeIn('slow');
     $('.dc-data-count').fadeIn('slow');
+    $('.reset-btn').fadeIn('slow');
 
 
     function show_sales_by_state(ndx) {
@@ -190,10 +191,10 @@ function makeGraphs(error, salesData) {
             .renderHorizontalGridLines(true)
             .compose([
                 dc.lineChart(compositeChart)
-                .colors('green')
+                .colors('#8CE888')
                 .group(newYouSales, "New You"),
                 dc.lineChart(compositeChart)
-                .colors('red')
+                .colors('#093F9B')
                 .group(freshLookSales, "Fesh Look")
             ])
 

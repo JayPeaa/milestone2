@@ -4,6 +4,7 @@ $(function(){
     $('.chart-title').hide();
     $('.table').hide();
     $('.dc-data-count').hide();
+    $('.reset-btn').hide();
     
     
 });
