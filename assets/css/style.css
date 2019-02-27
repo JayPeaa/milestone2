@@ -275,6 +275,14 @@ a.active {
     
 }
 
+.reset-btn{
+    float: none;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2em;
+    padding-top: 1em;
+}
+
 @-webkit-keyframes flashing {
     from {
         color: transparent;
@@ -475,4 +483,19 @@ div.dc-chart {
     height: 500px;
     width: 500px;
     margin: auto;
+}
+
+th.dc-table-head{
+    font-size: 0.8em;
+    padding: 0!important;
+}
+
+td.dc-table-label{
+    font-size: 0.7em;
+    padding: 0!important;
+}
+
+td.dc-table-column{
+    font-size: 0.6em;
+    padding: 0!important;
 }

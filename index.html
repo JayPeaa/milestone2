@@ -184,7 +184,9 @@ Your browser does not support the video tag.
         <!-- Pre Loader -->
         <div id="preloader">
         </div>
-        <a href="javascript:dc.filterAll(); dc.renderAll(); " class="btn">Reset All</a>
+        <div class="reset-btn">
+            <a href="javascript:dc.filterAll(); dc.renderAll(); " class="btn">Reset All</a>
+        </div>
         <div class="row ">
             <div class="col-md-4 col-sm-12">
                 <p class="chart-title">Sales By Year</p>
@@ -235,7 +237,10 @@ Your browser does not support the video tag.
                 <p class="table chart-title">Data Table</p>
                 <div>
                     <div class="dc-data-count">
-                        <span class="filter-count"></span> _selected out of _ <span class="total-count"></span> _records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+                        <span class="filter-count"></span> _selected out of _ <span class="total-count"></span> _records<span></span>
+                    </div>
+                    <div class="reset-btn">
+                        <a href="javascript:dc.filterAll(); dc.renderAll(); " class="btn">Reset All</a>
                     </div>
                 </div>
             </div>
