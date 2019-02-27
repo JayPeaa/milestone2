@@ -226,14 +226,14 @@ a.active {
 
 .btn {
     
-    background-color: white;
+    background-color: rgba(0,0,0,0,0.2);
     border-radius: 25px;
     border: 3px solid;
     color: #f20025;
     font-size: 15px;
     font-weight: bolder;
     letter-spacing: 2px;
-    padding: 10px;
+    padding: 5px;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.5s;
@@ -248,7 +248,7 @@ a.active {
     color: white;
     font-size: 15px;
     letter-spacing: 2px;
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
 }
 
@@ -279,9 +279,10 @@ a.active {
     float: none;
     display: flex;
     justify-content: center;
-    padding-bottom: 2em;
-    padding-top: 1em;
+    padding-bottom: 4em;
+    margin-top: 0.5em;
 }
+
 
 @-webkit-keyframes flashing {
     from {
@@ -358,6 +359,12 @@ a.active {
 /*--------CHARTS CAROUSELL AND API--------*/
 
 /*-----------BOOTSTRAP PLACEMENT-------*/
+
+#status{
+    padding-top: 0;
+}
+
+
 
 #the-slider {
     text-align: center;
