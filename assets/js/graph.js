@@ -3,10 +3,14 @@ queue()
     .await(makeGraphs);
 
 
-
 function makeGraphs(error, salesData) {
     var ndx = crossfilter(salesData);
     var all = ndx.groupAll();
+
+    dc.dataCount('.dc-data-count')
+        .dimension(ndx)
+        .group(all);
+
 
     var financialYearChart = dc.barChart("#chart0");
     var consolidatedMonthlySales = dc.lineChart("#chart6");
@@ -15,8 +19,7 @@ function makeGraphs(error, salesData) {
     var salesByCategory = dc.barChart("#chart5");
     var salesByManager = dc.barChart("#chart2");
     var salesByCountry = dc.barChart("#chart1");
-    //var recordCount = dc.dataCount(".dc-data-count");
-    //var recordTable = dc.dataTable(".dc-data-table");
+
 
     show_sales_by_state(ndx);
     show_sales_by_manager(ndx);
@@ -28,6 +31,7 @@ function makeGraphs(error, salesData) {
 
     salesData.forEach(function(d) {
         d.sales = parseInt(d.Sales)
+        d.month = d.Month.getMonth()
 
     })
 
@@ -35,7 +39,9 @@ function makeGraphs(error, salesData) {
     dc.renderAll();
     $('#preloader').fadeOut('slow');
     $('.chart-title').fadeIn('slow');
-    
+    $('.table').fadeIn('slow');
+    $('.dc-data-count').fadeIn('slow');
+
 
     function show_sales_by_state(ndx) {
         var dim = ndx.dimension(dc.pluck("Region"));
@@ -222,7 +228,7 @@ function makeGraphs(error, salesData) {
 
 
     function show_sales_by_month(ndx) {
-        var dim = ndx.dimension(dc.pluck("Financial Year"));
+        var dim = ndx.dimension(dc.pluck("FinancialYear"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
         let barColors = d3.scale.ordinal().range(["#4C73B6"])
@@ -250,25 +256,73 @@ function makeGraphs(error, salesData) {
     }
 
 
-    /*  recordCount
-      .dimension(ndx)
-      .group(all);
+    var month_dim = ndx.dimension(dc.pluck("Month"));
+    var recordCount = dc.dataCount(".dc-data-count");
+    var recordTable = dc.dataTable(".dc-data-table");
 
-      recordTable
-      .dimension(month_dim)
-      .group(function(d) {
-          var format = d3.format('02d');
-          return d.Month.getFullYear() + '/' + format((d.Month.getMonth() + 1));
-      })
-      .columns([
-          "Month",
-          "Financial Year",
-          "Chain",
-          "Region",
-          "Manager",
-          "Category",
-          "Sales"
-      ])*/
+
+    recordCount
+        .dimension(ndx)
+        .group(all);
+
+    recordTable
+        .width(700)
+        .height(400)
+        .dimension(month_dim)
+        .group(function(d) {
+            return d.Category;
+        })
+        .columns([{
+
+
+                label: "Month",
+                format: function(d) {
+                    return (d.Month.getMonth() + 1);
+
+                },
+            },
+            {
+                label: "Finanial Year",
+                format: function(d) {
+                    return d.FinancialYear
+
+
+                },
+            },
+            {
+                label: "Chain",
+                format: function(d) {
+                    return d.Chain
+                },
+
+            },
+            {
+                label: "Region",
+                format: function(d) {
+                    return d.Region
+
+                },
+            },
+            {
+                label: "Manager",
+                format: function(d) {
+                    return d.Manager
+
+                },
+            },
+            {
+                label: "Category",
+                format: function(d) {
+                    return d.Category
+                },
+            },
+            {
+                label: "Sales",
+                format: function(d) {
+                    return d.Sales
+                },
+            },
+        ]);
 
 
 
