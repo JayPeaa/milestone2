@@ -3,6 +3,7 @@ queue()
     .await(makeGraphs);
 
 
+
 function makeGraphs(error, salesData) {
     var ndx = crossfilter(salesData);
     var all = ndx.groupAll();
@@ -28,20 +29,25 @@ function makeGraphs(error, salesData) {
     show_sales_by_chain_line(ndx);
     show_sales_by_month(ndx);
     show_consolidated_sales_line(ndx);
+    show_table(ndx);
 
     salesData.forEach(function(d) {
         d.sales = parseInt(d.Sales)
         d.month = d.Month.getMonth()
 
+
+
     })
 
-
     dc.renderAll();
+
     $('#preloader').fadeOut('slow');
     $('.chart-title').fadeIn('slow');
     $('.table').fadeIn('slow');
     $('.dc-data-count').fadeIn('slow');
     $('.reset-btn').fadeIn('slow');
+    $('#next').fadeIn('slow');
+    $('#last').fadeIn('slow');
 
 
     function show_sales_by_state(ndx) {
@@ -187,7 +193,7 @@ function makeGraphs(error, salesData) {
             .dimension(month_dim)
             .x(d3.time.scale().domain([minDate, maxDate]))
             .yAxisLabel("Sales in £'s")
-            .legend(dc.legend().x(80).y(20).itemHeight(12).gap(5))
+            .legend(dc.legend().x(370).y(220).itemHeight(12).gap(5))
             .renderHorizontalGridLines(true)
             .compose([
                 dc.lineChart(compositeChart)
@@ -257,74 +263,106 @@ function makeGraphs(error, salesData) {
     }
 
 
-    var month_dim = ndx.dimension(dc.pluck("Month"));
-    var recordCount = dc.dataCount(".dc-data-count");
-    var recordTable = dc.dataTable(".dc-data-table");
+    function show_table(ndx) {
+        var month_dim = ndx.dimension(dc.pluck("Month"));
+        var recordCount = dc.dataCount(".dc-data-count");
+        var recordTable = dc.dataTable(".dc-data-table");
 
 
-    recordCount
-        .dimension(ndx)
-        .group(all);
+        recordCount
+            .dimension(ndx)
+            .group(all);
 
-    recordTable
-        .width(700)
-        .height(400)
-        .dimension(month_dim)
-        .group(function(d) {
-            return d.Category;
-        })
-        .columns([{
+        recordTable
+            .width(700)
+            .height(400)
+            .dimension(month_dim)
+            .size(Infinity)
+            .on('preRender', update_offset)
+            .on('preRedraw', update_offset)
+            .group(function(d) {
+                return d.Category;
+            })
+            .columns([{
 
 
-                label: "Month",
-                format: function(d) {
-                    return (d.Month.getMonth() + 1);
+                    label: "Month",
+                    format: function(d) {
+                        return (d.Month.getMonth() + 1);
+
+                    },
+                },
+                {
+                    label: "Finanial Year",
+                    format: function(d) {
+                        return d.FinancialYear
+
+
+                    },
+                },
+                {
+                    label: "Chain",
+                    format: function(d) {
+                        return d.Chain
+                    },
 
                 },
-            },
-            {
-                label: "Finanial Year",
-                format: function(d) {
-                    return d.FinancialYear
+                {
+                    label: "Region",
+                    format: function(d) {
+                        return d.Region
 
+                    },
+                },
+                {
+                    label: "Manager",
+                    format: function(d) {
+                        return d.Manager
 
+                    },
                 },
-            },
-            {
-                label: "Chain",
-                format: function(d) {
-                    return d.Chain
+                {
+                    label: "Category",
+                    format: function(d) {
+                        return d.Category
+                    },
                 },
+                {
+                    label: "Sales",
+                    format: function(d) {
+                        return d.Sales
+                    },
+                },
+            ]);
 
-            },
-            {
-                label: "Region",
-                format: function(d) {
-                    return d.Region
+        var ofs = 0,
+            pag = 30;
 
-                },
-            },
-            {
-                label: "Manager",
-                format: function(d) {
-                    return d.Manager
+        function update_offset() {
+            var totFilteredRecs = ndx.groupAll().value();
+            var end = ofs + pag > totFilteredRecs ? totFilteredRecs : ofs + pag;
+            ofs = ofs >= totFilteredRecs ? Math.floor((totFilteredRecs - 1) / pag) * pag : ofs;
+            ofs = ofs < 0 ? 0 : ofs;
+            recordTable.beginSlice(ofs);
+            recordTable.endSlice(ofs + pag);
+        }
 
-                },
-            },
-            {
-                label: "Category",
-                format: function(d) {
-                    return d.Category
-                },
-            },
-            {
-                label: "Sales",
-                format: function(d) {
-                    return d.Sales
-                },
-            },
-        ]);
+        function next() {
+            ofs += pag;
+            update_offset();
+            recordTable.redraw();
+        }
 
+        function last() {
+            ofs -= pag;
+            update_offset();
+            recordTable.redraw();
+        }
+
+        $('#next').on('click', next);
+        $('#last').on('click', last);
+
+    }
 
 
 }

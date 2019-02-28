@@ -407,7 +407,7 @@ a.active {
 .slider-image{
     margin: 5px;
     padding: 0;
-    width: 100%;
+    width: 95%;
     max-height: auto;
     background-color: white;
 }
@@ -454,6 +454,9 @@ a.active {
     display: block;
     max-width: 100%;
     min-height: 300px;
+    float: none; 
+    display: flex;
+    justify-content: center;
 }
 
 .dashboard{
@@ -506,3 +509,7 @@ td.dc-table-column{
     font-size: 0.6em;
     padding: 0!important;
 }
+
+
+
+

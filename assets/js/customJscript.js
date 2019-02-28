@@ -10,18 +10,21 @@ var scrollEvent = d3.behavior.zoom()
     startPos += (scrollDirection > 0 && startPos + increment < allData.length) ? scrollDirection :
       (scrollDirection < 0 && startPos + increment > increment) ? scrollDirection :
       0;
+      console.log(scrollDirection)
     updateTable();
   });
 
-var table = d3.select("#data-table").append("table");
+var table = d3.select("#data-table");
 var thead = table.append("thead");
 var tbody = table.append("tbody").call(scrollEvent);
+
 
 d3.csv("assets/data/storeSales.csv", function(error, data) {
   if (error) throw error;
 
-  keys = Object.keys(data[0]),
-    allData = data;
+  keys = Object.keys(data[0]), //this is the column headings
+    allData = data; //this is all my data as an object so all 91k rows
+
 
   thead.append('tr')
     .selectAll('th')
@@ -39,17 +42,17 @@ function updateTable() {
   currentData = allData.slice(startPos, startPos + increment);
 
   // Delete previous rows.
-  tbody.selectAll('tr').remove();
+  tbody.selectAll('tr.dc-table-row').remove();
 
   // Create new rows.
-  var tr = tbody.selectAll("tr")
+  var tr = tbody.selectAll("tr.dc-table-row")
     .data(currentData).enter()
-    .append("tr")
+    .append("tr.dc-table-row")
     .classed("even", function(d, i) {
       return i % 2 == 1;
     });
-
-  tr.selectAll('td')
+  console.log(tr)
+  tr.selectAll('td.dc-table-column')
     .data(function(d) {
       return keys.map(function(e) {
         return {
@@ -58,7 +61,7 @@ function updateTable() {
         }
       });
     }).enter()
-    .append('td')
+    .append('td.dc-table-column')
     .text(function(d) {
       return d.value;
     });
