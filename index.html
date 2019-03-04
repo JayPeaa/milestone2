@@ -34,9 +34,8 @@
 
     <!--Animation and Nav Coding -->
     <script type="text/javascript" src="assets/js/customJqry.js"></script>
-    <script type="text/javascript" src="assets/js/customJscript.js"></script>
 
-    <title>Sales Force MI</title>
+    <title>Best Analytics</title>
 
 </head>
 
@@ -54,7 +53,7 @@
                     <span class="icon-bar"></span>                        
                 </button>
 
-                <a class="navbar-brand" href="index.html">Sales Force MI</a>
+                <a class="navbar-brand" href="index.html">Best Analytics</a>
 
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
@@ -72,13 +71,15 @@
 
     <header class="container-fluid jumbotron">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-sm-12">
                 <div class="text-center hero-text-container">
-                    <h1 class="header-title"><br>Sales Force MI</h1>
-                    <h2 class="slogan">Putting You in The Drivers Seat!</h2>
-                    <h3 class="header-paragraph">Providers of Bespoke Interactive Dashboards. <br>Contact Us Now for a Free No Obligation Consultation.</h3>
-                    <a id="contact-us-button" href="#contactus" class="btn"><i class="fa fa-envelope fa-1x" ></i> Contact Us</a>
-                    <p><a id="continue-arrow" href="#about"><i class="fa fa-arrow-down animated flash"></i></a></p>
+                    <h1 class="header-title">Best Analytics</h1>
+                    <h2 class="slogan">Putting You in The Driver's Seat!</h2>
+                    <h3 class="header-paragraph">Providers of Bespoke Interactive Dashboards. Contact Us Now for a Free No Obligation Consultation.</h3>
+                    <div>
+                        <a id="contact-us-button" href="#contactus" class="btn"><i class="fa fa-envelope fa-1x" ></i> Contact Us</a>
+                    </div>
+                    <a id="continue-arrow" href="#about"><i class="fa fa-arrow-down animated flash"></i></a>
                 </div>
             </div>
         </div>
@@ -89,11 +90,11 @@
 
     <article id="about" class="container nav-container">
         <div class="row about-us-row">
-            <h1>About Sales Force MI<br><br></h1>
+            <h2>About Us<br></h2>
             <div class="col-md-6 col-sm-12 center-block">
                 <p class="general-paragraph about-us-text"> We help you improve your business performance. We do this through building intuitive, interactive and bespoke dashboards to give you key metrics at a glance.<br>
                     <br> The dashboards facilitate better performance management and drive engagement of key stakeholders in the buisness. <br><br> We can arrange a free consulatiation to better understand your business needs to deliver a fully customised
-                    interactive dashboard for your buisenss saving you time in preparing this infomation manually.</p>
+                    interactive dashboard for your buisenss saving you time in preparing this infomation manually.<br><br></p>
 
             </div>
 
@@ -111,20 +112,19 @@
                             <div class="carousel-inner">
                                 <div class="item active">
                                     <img src="assets/vendor/images/dashboard-image-1.png" class="img-responsive slider-image" alt="...">
-                                    <h3>Smart and Intuitive</h3>
+                                    <p class="slider-text">Smart and Intuitive</p>
                                 </div>
                                 <!--item 1-->
 
                                 <div class="item">
                                     <img src="assets/vendor/images/dashboard-image-2.png" class="img-responsive slider-image" alt="...">
-                                    <h3>
-                                        Beautifully crafted</h3>
+                                    <p class="slider-text">Beautifully crafted</p>
                                 </div>
                                 <!--item 2-->
 
                                 <div class="item">
                                     <img src="assets/vendor/images/dashboard-image-3.png" class="img-responsive slider-image" alt="...">
-                                    <h3>Enhanced Engagement</h3>
+                                    <p class="slider-text">Enhanced Engagement</p>
                                 </div>
                                 <!--item 2-->
 
@@ -165,7 +165,7 @@ Your browser does not support the video tag.
 
 
             <div class="col-md-6 col-sm-12 center-block">
-                <p class="general-paragraph about-us-text"><br> The benefits of engaging us to build a bespoke solution are numerous. Increase the speed and efficiency in producing such crucial information whilst eliminating potential errors in preparing such metrics manually. <br><br>In addition
+                <p class="general-paragraph about-us-text"><br><br> The benefits of engaging us to build a bespoke solution are numerous. Increase the speed and efficiency in producing such crucial information whilst eliminating potential errors in preparing such metrics manually. <br><br>In addition
                     you ensure that the information is beautifully presented and consistently styled each time you use it. The addition of the interactivity also drives user engagement to ensure everyone knows how your company is performing and the part
                     they play in it.</p>
 
@@ -176,99 +176,107 @@ Your browser does not support the video tag.
 
     <!--Dashboard -->
     <div id="dashboard" class="nav-container">
-        <h2><br><br><br>What do the numbers tell us? <br></h2>
-        <h3>Dashboard<br></h3>
+        <h4 class="section-headings"><br><br><br>What do the numbers tell us? <br></h4>
+        <h4 class="section-headings">Dashboard<br></h4>
     </div>
 
     <section class="container-fluid dashboard" id="status">
 
         <!-- Pre Loader -->
         <div id="preloader">
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="hide-on-landscape">
+                    <img src="assets/vendor/images/rotate-device-image.png" class="rotate-screen-img charts"></img>
+                </div>
+            </div>
         </div>
         <div class="reset-btn">
-            <a href="javascript:dc.filterAll(); dc.renderAll(); " class="btn">Reset All</a>
+            <a href="javascript:dc.filterAll(); dc.renderAll(); " class="hide-on-portrait btn">Reset All</a>
         </div>
         <div class="row ">
-            <div class="col-md-4 col-sm-12">
+            <div class="hide-on-portrait col-sm-12 col-md-6 col-lg-4">
                 <p class="chart-title">Sales By Year</p>
                 <div id="chart0" class="charts"></div>
                 <span class="reset" style="display: none;">Selected: <span class="filter"></span></span>
                 <a class="reset" href="javascript:financialYearChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
                 <div class="clearfix"></div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="hide-on-portrait col-sm-12 col-md-6 col-lg-4">
                 <p class="chart-title">Sales by Area</p>
                 <div id="chart1" class="charts"></div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="hide-on-portrait col-sm-12 col-md-6 col-lg-4">
                 <p class="chart-title">Sales by Manager</p>
                 <div id="chart2" class="charts"></div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
+
+
+            <div class="hide-on-portrait col-sm-12 col-md-6 col-lg-4">
                 <p class="chart-title">Sales by Chain</p>
                 <div id="chart3" class="charts"></div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="hide-on-portrait col-sm-12 col-md-6 col-lg-4">
                 <p class="chart-title">Sales by Chain</p>
                 <div id="chart4" class="charts"></div>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="hide-on-portrait col-sm-12 col-md-6 col-lg-4">
                 <p class="chart-title">Sales by Category</p>
                 <div id="chart5" class="charts"></div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
 
+            <div class="row">
 
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <p class="chart-title">Consolidated Sales by Period</p>
-                <div id="chart6" class="charts"></div>
-            </div>
-            <div class="col-md-4 col-sm-12">
-
+                <div class="hide-on-portrait col-sm-12 col-md-6 col-lg-4">
+                    <p class="chart-title">Consolidated Sales by Period</p>
+                    <div id="chart6" class="charts"></div>
+                </div>
 
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
+            <div class="row">
+                <div class="hide-on-portrait col-md-4 col-sm-12">
 
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <p class="table chart-title">Data Table</p>
-                <div>
-                    <div class="dc-data-count">
-                        <span class="filter-count"></span> _selected out of _ <span class="total-count"></span> _records<span></span>
-                    </div>
-                    <div class="reset-btn">
-                        <a href="javascript:dc.filterAll(); dc.renderAll(); " class="btn">Reset All</a>
+                </div>
+                <div class="hide-on-portrait col-md-4 col-sm-12">
+                    <p class="table chart-title">Data Table</p>
+                    <div>
+                        <div class="hide-on-portrait dc-data-count">
+                            <span class="filter-count"></span>&nbspselected out of&nbsp<span class="total-count"></span> &nbsprecords<span></span>
+                        </div>
+                        <div class="reset-btn">
+                            <a href="javascript:dc.filterAll(); dc.renderAll(); " class="btn">Reset All</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-sm-12">
+                <div class="hide-on-portrait col-md-4 col-sm-12">
 
+                </div>
             </div>
-        </div>
-        <button id="last" class="btn">Last</button>
-        <button id="next" class="btn">Next</button>
-        <div class="row">
-            <div class="col-md-offset-2 col-md-8 col-sm-12">
-                <table id="data-table" class="table table-hover dc-data-table">
-                </table>
+            <div id="table-buttons" class="row">
+                <div class="hide-on-portrait center-block">
+                    <button id="last" class="btn">Last</button>
+                    <button id="next" class="btn">Next</button>
+                </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="hide-on-portrait col-md-offset-2 col-md-8 col-sm-12">
+                    <table id="data-table" class="table table-hover dc-data-table">
+                    </table>
+                </div>
+            </div>
     </section>
-    <section class="container google-maps-section">
+    <div id="dashboard" class="nav-container">
+        <h4 class="section-headings"><br><br><br>Google Maps</h4>
+    </div>
+    <section class="container google-maps-section center-block">
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="charts api-text">
-
-                    <p class="general-paragraph"><br>In addition to simply setting you up with the dashboard we also offer a complete website design and integration service. We can integrate various APIs to add additional value to your site. The google maps API is an example of this
+                    <p class="general-paragraph"><br>In addition to simply setting you up with the dashboard we also offer a complete website design and integration service. We can integrate various APIs to add additional value to your site. The google maps API is an example of this.
                         Here we are highlighting all the stores in the two chains, 'Fresh Look' and 'New You'. This highlights the various store locations so customers know where to find you. <br><br>Google can also provide your business with a number
-                        of benefits for free. Register your business with Google Business and take advantage of some free advertising. Google will also display your business information such as contact phone numbers and office opening hours.</p>
+                        of benefits for free. Register your business with Google Business and take advantage of some free advertising. Google will also display your business information such as contact phone numbers and office opening hours.<br><br></p>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
@@ -282,18 +290,18 @@ Your browser does not support the video tag.
 
     <article id="contactus" class="container contact-us-container nav-container">
 
-        <h2 class="text-uppercase"> <br><br><br>Contact Us </h2>
-        <p class="contact-us-intro-text">If you would like further information on Sales Force MI or would like to book a free consultation please do not hesitate to contact us. <br><br><br></p>
+        <p class="text-uppercase section-headings"> <br><br><br>Contact Us </p>
+        <p class="contact-us-intro-text">If you would like further information on our dashboards or would like to book a free consultation please do not hesitate to contact us. <br><br><br></p>
 
     </article>
 
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 contact-form-address-section-border">
-                <h1>Get in touch</h1>
-                <p class="contact-us-intro-text">Do get in touch with any questions. We can be contacted via the post, email or telephone.<br><br></p>
-                <h1>Address <br></h1>
-                <p><br> Sales Force MI <br> 123 Lincoln Avenue <br> England <br> SG10 3TR <br><br> Tel: 02145 987452 <br><br> salesforcemi@somewhere.com</p>
+                <p class="section-headings"><br>Get in touch<br></p>
+                <p class="contact-us-intro-text"><br> Do get in touch with any questions. We can be contacted via the post, email or telephone.<br><br></p>
+                <p class="section-headings"><br>Address <br><br></p>
+                <p class="Address-info"><br> Best Analytics <br> 123 Lincoln Avenue <br> England <br> SG10 3TR <br><br><br> Tel: 02145 987452 <br><br> bestanalytics@somewhere.com</p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
                 <div class="empty-column">
@@ -302,7 +310,7 @@ Your browser does not support the video tag.
             </div>
             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 contact-form-border">
                 <div class="contact-us-form">
-                    <p class="contact-us-intro-text"><br><br>You can also contact us via this form or reach out to us on social media. All of our links are located in the footer. We aim to resond to all of our requests with 48 hours.<br><br></p>
+                    <p class="contact-us-intro-text"><br><br>You can also contact us via this form or reach out to us on social media. All of our Social Media links are located below. We aim to resond to all of our requests with 48 hours.<br><br></p>
                     <form id="contact-form" class="contact-us-form" onsubmit="return sendMail(this);" method="POST">
                         <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
                         <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email address" required/>
@@ -318,7 +326,7 @@ Your browser does not support the video tag.
     <!--Email subscription section-->
 
     <section class="container subscribe-container">
-        <h1>Latest News</h1>
+        <h2>Latest News</h2>
         <p>Sign up for regular updates on new products and services.</p>
 
 

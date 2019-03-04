@@ -7,8 +7,8 @@ $(function() {
     $('.reset-btn').hide();
     $('#next').hide();
     $('#last').hide();
+    $('.rotate-screen-img').hide();
     
-
 
 });
 

@@ -48,6 +48,9 @@ function makeGraphs(error, salesData) {
     $('.reset-btn').fadeIn('slow');
     $('#next').fadeIn('slow');
     $('#last').fadeIn('slow');
+    $('.rotate-screen-img').fadeIn('slow');
+    
+    
 
 
     function show_sales_by_state(ndx) {
@@ -72,6 +75,7 @@ function makeGraphs(error, salesData) {
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Country")
             .yAxisLabel("Sales in £'s")
+            .elasticY(true)
             .yAxis().ticks(10);
 
 
@@ -101,6 +105,7 @@ function makeGraphs(error, salesData) {
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Manager")
             .yAxisLabel("Sales in £'s")
+            .elasticY(true)
             .yAxis().ticks(10);
 
 
@@ -128,6 +133,7 @@ function makeGraphs(error, salesData) {
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Category")
             .yAxisLabel("Sales in £'s")
+            .elasticY(true)
             .yAxis().ticks(10);
 
 
@@ -193,6 +199,7 @@ function makeGraphs(error, salesData) {
             .dimension(month_dim)
             .x(d3.time.scale().domain([minDate, maxDate]))
             .yAxisLabel("Sales in £'s")
+            .elasticY(true)
             .legend(dc.legend().x(370).y(220).itemHeight(12).gap(5))
             .renderHorizontalGridLines(true)
             .compose([
@@ -227,6 +234,7 @@ function makeGraphs(error, salesData) {
             .x(d3.time.scale().domain([minDate, maxDate]))
             .xAxisLabel("Month")
             .yAxisLabel("Sales in £'s")
+            .elasticY(true)
             .yAxis().ticks(10);
 
     }
@@ -257,6 +265,7 @@ function makeGraphs(error, salesData) {
             .xUnits(dc.units.ordinal)
             .xAxisLabel("Financial Year")
             .yAxisLabel("Sales in £'s")
+            .elasticY(true)
             .yAxis().ticks(10);
 
 
@@ -283,19 +292,11 @@ function makeGraphs(error, salesData) {
             .group(function(d) {
                 return d.Category;
             })
-            .columns([{
-
-
+            .columns([
+                {
                     label: "Month",
                     format: function(d) {
-                        return (d.Month.getMonth() + 1);
-
-                    },
-                },
-                {
-                    label: "Finanial Year",
-                    format: function(d) {
-                        return d.FinancialYear
+                        return d.MonthText
 
 
                     },
@@ -336,7 +337,7 @@ function makeGraphs(error, salesData) {
             ]);
 
         var ofs = 0,
-            pag = 30;
+            pag = 20;
 
         function update_offset() {
             var totFilteredRecs = ndx.groupAll().value();
