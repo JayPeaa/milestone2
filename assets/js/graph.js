@@ -1,8 +1,10 @@
+/*--------Load data from CSV file--------*/
+
 queue()
     .defer(d3.csv, "assets/data/storeSales.csv")
     .await(makeGraphs);
 
-
+/*--------Make graphs function & Crossfilter Creation--------*/
 
 function makeGraphs(error, salesData) {
     var ndx = crossfilter(salesData);
@@ -12,6 +14,7 @@ function makeGraphs(error, salesData) {
         .dimension(ndx)
         .group(all);
 
+/*------------Assigning chart type and locations to variables-----------*/
 
     var financialYearChart = dc.barChart("#chart0");
     var consolidatedMonthlySales = dc.lineChart("#chart6");
@@ -20,7 +23,6 @@ function makeGraphs(error, salesData) {
     var salesByCategory = dc.barChart("#chart5");
     var salesByManager = dc.barChart("#chart2");
     var salesByCountry = dc.barChart("#chart1");
-
 
     show_sales_by_state(ndx);
     show_sales_by_manager(ndx);
@@ -31,15 +33,18 @@ function makeGraphs(error, salesData) {
     show_consolidated_sales_line(ndx);
     show_table(ndx);
 
+/*-----Interger Conversion and Date Formatting Loop----*/
+
     salesData.forEach(function(d) {
         d.sales = parseInt(d.Sales)
         d.month = d.Month.getMonth()
-
-
-
     })
 
+/*-----------------Render the charts------------------*/
+
     dc.renderAll();
+
+/*------------Fade in all dashboard components------------*/
 
     $('#preloader').fadeOut('slow');
     $('.chart-title').fadeIn('slow');
@@ -50,15 +55,13 @@ function makeGraphs(error, salesData) {
     $('#last').fadeIn('slow');
     $('.rotate-screen-img').fadeIn('slow');
     
-    
-
+/*----------------------Graph Construction---------------*/
 
     function show_sales_by_state(ndx) {
         var dim = ndx.dimension(dc.pluck("Region"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
         let barColors = d3.scale.ordinal().range(["#EA3500", "#FEC928", "#8CE888", "#093F9B", "#282828"])
-
 
         salesByCountry
             .width(360)
@@ -77,10 +80,6 @@ function makeGraphs(error, salesData) {
             .yAxisLabel("Sales in £'s")
             .elasticY(true)
             .yAxis().ticks(10);
-
-
-
-
     }
 
     function show_sales_by_manager(ndx) {
@@ -88,7 +87,6 @@ function makeGraphs(error, salesData) {
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
         let barColors = d3.scale.ordinal().range(["#EA3500", "#EA3500", "#8CE888", "#8CE888", "#FEC928", "#FEC928", "#093F9B", "#282828"])
-
 
         salesByManager
             .width(360)
@@ -107,8 +105,6 @@ function makeGraphs(error, salesData) {
             .yAxisLabel("Sales in £'s")
             .elasticY(true)
             .yAxis().ticks(10);
-
-
     }
 
     function show_sales_by_category(ndx) {
@@ -116,7 +112,6 @@ function makeGraphs(error, salesData) {
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
         let barColors = d3.scale.ordinal().range(["#4C73B6"])
-
 
         salesByCategory
             .width(360)
@@ -135,8 +130,6 @@ function makeGraphs(error, salesData) {
             .yAxisLabel("Sales in £'s")
             .elasticY(true)
             .yAxis().ticks(10);
-
-
     }
 
     function show_sales_by_chain(ndx) {
@@ -144,7 +137,6 @@ function makeGraphs(error, salesData) {
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
         let barColors = d3.scale.ordinal().range(["#093F9B", "#8CE888"])
-
 
         chainPieChart
             .height(300)
@@ -156,8 +148,6 @@ function makeGraphs(error, salesData) {
             .dimension(dim)
             .group(group)
             .transitionDuration(1500)
-
-
     }
 
     function show_sales_by_chain_line(ndx) {
@@ -191,7 +181,6 @@ function makeGraphs(error, salesData) {
             }
         });
 
-
         compositeChart
             .width(450)
             .height(300)
@@ -212,7 +201,6 @@ function makeGraphs(error, salesData) {
             ])
 
             .brushOn(false)
-
     }
 
     function show_consolidated_sales_line(ndx) {
@@ -222,7 +210,6 @@ function makeGraphs(error, salesData) {
 
         var minDate = month_dim.bottom(1)[0].Month;
         var maxDate = month_dim.top(1)[0].Month;
-
 
         consolidatedMonthlySales
             .width(450)
@@ -236,19 +223,13 @@ function makeGraphs(error, salesData) {
             .yAxisLabel("Sales in £'s")
             .elasticY(true)
             .yAxis().ticks(10);
-
     }
-
-
-
 
     function show_sales_by_month(ndx) {
         var dim = ndx.dimension(dc.pluck("FinancialYear"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
         let barColors = d3.scale.ordinal().range(["#4C73B6"])
-
-
 
         financialYearChart
             .width(360)
@@ -267,16 +248,14 @@ function makeGraphs(error, salesData) {
             .yAxisLabel("Sales in £'s")
             .elasticY(true)
             .yAxis().ticks(10);
-
-
     }
 
+/*-------------Data Count and Data Tabel Code---------------------*/
 
     function show_table(ndx) {
         var month_dim = ndx.dimension(dc.pluck("Month"));
         var recordCount = dc.dataCount(".dc-data-count");
         var recordTable = dc.dataTable(".dc-data-table");
-
 
         recordCount
             .dimension(ndx)
@@ -297,8 +276,6 @@ function makeGraphs(error, salesData) {
                     label: "Month",
                     format: function(d) {
                         return d.MonthText
-
-
                     },
                 },
                 {
@@ -306,20 +283,17 @@ function makeGraphs(error, salesData) {
                     format: function(d) {
                         return d.Chain
                     },
-
                 },
                 {
                     label: "Region",
                     format: function(d) {
                         return d.Region
-
                     },
                 },
                 {
                     label: "Manager",
                     format: function(d) {
                         return d.Manager
-
                     },
                 },
                 {
@@ -347,23 +321,17 @@ function makeGraphs(error, salesData) {
             recordTable.beginSlice(ofs);
             recordTable.endSlice(ofs + pag);
         }
-
         function next() {
             ofs += pag;
             update_offset();
             recordTable.redraw();
         }
-
         function last() {
             ofs -= pag;
             update_offset();
             recordTable.redraw();
         }
-
         $('#next').on('click', next);
         $('#last').on('click', last);
-
     }
-
-
 }

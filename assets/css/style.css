@@ -2,9 +2,10 @@
 /*font-family: 'Mukta', sans-serif;
 font-family: 'PT Serif', serif;*/
 
+/*---------NAV Scroll Effect--------*/
+
 html {
     scroll-behavior: smooth;
-
 }
 
 .row {
@@ -29,7 +30,6 @@ html {
     margin: 0;
 }
 
-
 .jumbotron {
     padding: 0;
     margin: 0;
@@ -42,10 +42,7 @@ html {
     height: 100vh;
 }
 
-
-
-
-/*---START OF BODY-----*/
+/*---General Body-----*/
 
 body {
     margin: 0;
@@ -87,9 +84,7 @@ p {
 }
 
 
-/*----END OF BODY------*/
-
-/*-------START OF NAV-------*/
+/*-------NAV Styling-------*/
 
 .navbar-nav {
     margin: 0;
@@ -149,7 +144,8 @@ p {
 
 #myNavbar {
     border-bottom: solid;
-    border-color: #9a5688;
+    border-color: silver;
+    border-width: 2px;
     padding: 0;
 }
 
@@ -170,10 +166,7 @@ a.active {
     color: #fec606 !important;
 }
 
-
-/*-------END OF NAV --------*/
-
-/*-----------START OF FOOTER---------------*/
+/*-----------Footer Styling---------------*/
 
 .footer-container {
     text-align: center;
@@ -221,9 +214,8 @@ a.active {
     align-items: center;
 }
 
-/*-----------END OF FOOTER---------------*/
 
-/*---------START OF BUTTON EFFECTS------*/
+/*---------Button Effects------*/
 
 .btn {
 
@@ -267,7 +259,7 @@ a.active {
 
 .fa-arrow-down {
     border-style: solid;
-    border-width: 3px;
+    border-width: 2px;
     border-radius: 50%;
     border-color: white;
     text-shadow: none;
@@ -310,11 +302,11 @@ a.active {
 @-webkit-keyframes flashing {
     from {
         color: transparent;
-        border-color: #9a5688;
+        border-color: red;
     }
 
     to {
-        color: #9a5688;
+        color: red;
         border-color: white;
     }
 }
@@ -322,11 +314,11 @@ a.active {
 @keyframes flashing {
     from {
         color: transparent;
-        border-color: #9a5688;
+        border-color: red;
     }
 
     to {
-        color: #9a5688;
+        color: red;
         border-color: white;
     }
 }
@@ -341,15 +333,11 @@ button#last {
 }
 
 
-
-/*---------END OF BUTTON EFFECTS------*/
-
-/*------START OF CONTACT US SECTION-------*/
+/*----------Contact Us Section ----------*/
 
 .contact-us-form {
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .section-headings {
@@ -367,7 +355,8 @@ button#last {
 
 .contact-form-address-section-border {
     border-style: solid;
-    border-color: white;
+    border-color: silver;
+    border-width: 2px;
     padding-top: 2em;
     padding: 1.5em;
     background: white;
@@ -379,6 +368,9 @@ button#last {
 }
 
 .contact-form-border {
+    border-style: solid;
+    border-color: silver;
+    border-width: 2px;
     padding-top: 2em;
     padding: 1.5em;
     background: white;
@@ -392,32 +384,24 @@ button#last {
 
 
 
-/*-----------BOOTSTRAP PLACEMENT-------*/
+/*-----------Charts & Carousell & Api Section-----------*/
 
 #status {
     padding-top: 0;
     min-height: 270px;
 }
 
-
-
 #the-slider {
     text-align: center;
     font-size: large;
     max-width: 100%;
     display: block;
-
 }
 
-
 #map {
-    margin: 3px;
-    margin-top: 10%;
+    margin-top: 2em;
     min-height: 250px;
-    width: 80%;
-    background-color: white;
-    text-align: center;
-    font-size: large;
+    width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -425,8 +409,6 @@ button#last {
     border-width: 2px;
     border-color: silver;
 }
-
-
 
 video {
     margin: 2px;
@@ -448,8 +430,6 @@ video {
     background-color: white;
 }
 
-
-
 .slider-image {
     margin: 5px;
     padding: 0;
@@ -457,8 +437,6 @@ video {
     max-height: auto;
     background-color: white;
 }
-
-
 
 .google-maps-section {
     height: 100%;
@@ -474,15 +452,12 @@ video {
     vertical-align: middle;
 }
 
-
-
 section.container.google-maps-section.center-block {
     margin: 1em;
     display: block;
     margin-left: auto;
     margin-right: auto;
     vertical-align: middle;
-
 }
 
 .carousel-control.left,
@@ -524,13 +499,9 @@ section.container.google-maps-section.center-block {
     padding-bottom: 2.5em;
     background-color: white;
     box-shadow: 3px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    margin: 1em;
     margin-top: 2.5em;
     padding-top: 2.5em;
-
-}
-
-.dashboard {
-    margin: 1em;
 }
 
 .chart-title {
@@ -636,8 +607,6 @@ img.rotate-screen-img.charts {
 
 }
 
-@media (min-width: 451px) and (max-width:540px) {}
-
 @media (min-width: 551px) and (max-width:768px) {
     .slogan {
         font-size: 0.2em;
@@ -672,11 +641,35 @@ img.rotate-screen-img.charts {
     }
 }
 
-@media (min-width: 769px) and (max-width:1024px) {}
+@media (min-width: 769px) and (max-width:1023px) {
+    h1.header-title {
+        font-size: 0.4em;
+    }
+    .header-paragraph {
+        margin-top: 7%;
+    }
+    a.navbar-brand {
+        font-size: 1.5em;
+    }
+    .carousel-inner>.item>img,
+    .img-responsive,
+    .thumbnail a>img,
+    .thumbnail>img {
+        max-width: 49%;
+    }
+    video {
+        max-width: 65%;
+    }
+}
 
-@media (min-width: 1025px) and (max-width:1200px) {}
-
-@media (min-width: 1201px) {}
+@media (min-width: 1024px) {
+    h3.header-paragraph {
+        font-size: 0.3em;
+        margin-left: 3em;
+        margin-right: 3em;
+        margin-bottom: 2em;
+    }
+}
 
 @media (orientation:landscape) {
     .hide-on-landscape {
@@ -689,70 +682,3 @@ img.rotate-screen-img.charts {
         display: none;
     }
 }
-
-
-/*
-.slogan {
-        font-size: 0.2em;
-    }
-    .navbar-brand {
-        font-size: 1.5em;
-    }
-    .header-paragraph {
-        margin-top: 4%;
-        color: white;
-        margin-bottom: 0;
-        font-size: 0.17em;
-    }
-    a#contact-us-button {
-        display: block;
-        margin-top: 1em;
-        width: 25%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    h1.header-title {
-        margin-top: 0.9em;
-    }
-    p {
-        font-size: 0.8em;
-    }
-
-    .fa-arrow-down {
-        bottom: -15vh;
-    }
-
-    .carousel-inner>.item>img,
-    .img-responsive,
-    .thumbnail a>img,
-    .thumbnail>img {
-        max-width: 58%;
-        min-height: 200px;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-    }
-
-    video {
-        margin: 3px;
-        max-width: 64%;
-        height: auto;
-        text-align: center;
-        border-style: solid;
-        border-color: silver;
-        border-radius: 15px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        margin-top: 1.5em;
-        margin-bottom: 1em;
-    }
-
-    .Address-info {
-        font-size: 1em;
-    }
-
-}*/

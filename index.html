@@ -7,13 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!--Favicon-->
-
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
 
-
+    <!--Styling Links-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
@@ -24,16 +23,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- D3 libs-->
-
-    <script type="text/javascript" src="assets/js/d3.min.js"></script>
-    <script type="text/javascript" src="assets/js/crossfilter.min.js"></script>
-    <script type="text/javascript" src="assets/js/dc.min.js"></script>
-    <script type="text/javascript" src="assets/js/queue.min.js"></script>
-    <script type="text/javascript" src="assets/js/graph.js"></script>
+    <script src="assets/js/d3.min.js"></script>
+    <script src="assets/js/crossfilter.min.js"></script>
+    <script src="assets/js/dc.min.js"></script>
+    <script src="assets/js/queue.min.js"></script>
+    <script src="assets/js/graph.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 
     <!--Animation and Nav Coding -->
-    <script type="text/javascript" src="assets/js/customJqry.js"></script>
+    <script src="assets/js/customJqry.js"></script>
 
     <title>Best Analytics</title>
 
@@ -42,8 +40,6 @@
 <body id="home" class="nav-container">
 
     <!--NAV Bar-->
-
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -68,7 +64,6 @@
     </nav>
 
     <!--Start of Jumbotron in Header-->
-
     <header class="container-fluid jumbotron">
         <div class="row">
             <div class="col-sm-12">
@@ -86,8 +81,6 @@
     </header>
 
     <!--About Us Container-->
-
-
     <article id="about" class="container nav-container">
         <div class="row about-us-row">
             <h2>About Us<br></h2>
@@ -95,11 +88,10 @@
                 <p class="general-paragraph about-us-text"> We help you improve your business performance. We do this through building intuitive, interactive and bespoke dashboards to give you key metrics at a glance.<br>
                     <br> The dashboards facilitate better performance management and drive engagement of key stakeholders in the buisness. <br><br> We can arrange a free consulatiation to better understand your business needs to deliver a fully customised
                     interactive dashboard for your buisenss saving you time in preparing this infomation manually.<br><br></p>
-
             </div>
 
-
-            <section class="container slider-container">
+            <!--Slider/Carousel-->
+            <div class="container slider-container">
                 <div class="row">
                     <div class="col-md-6 col-sm-12 center-block">
                         <div id="the-slider" class="carousel slide center-block" data-ride="carousel">
@@ -111,19 +103,19 @@
 
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="assets/vendor/images/dashboard-image-1.png" class="img-responsive slider-image" alt="...">
+                                    <img src="assets/vendor/images/dashboard-image-1.png" class="img-responsive slider-image" alt="picture of a dashboard">
                                     <p class="slider-text">Smart and Intuitive</p>
                                 </div>
                                 <!--item 1-->
 
                                 <div class="item">
-                                    <img src="assets/vendor/images/dashboard-image-2.png" class="img-responsive slider-image" alt="...">
+                                    <img src="assets/vendor/images/dashboard-image-2.png" class="img-responsive slider-image" alt="picture of a dashboard">
                                     <p class="slider-text">Beautifully crafted</p>
                                 </div>
                                 <!--item 2-->
 
                                 <div class="item">
-                                    <img src="assets/vendor/images/dashboard-image-3.png" class="img-responsive slider-image" alt="...">
+                                    <img src="assets/vendor/images/dashboard-image-3.png" class="img-responsive slider-image" alt="picture of a dashboard">
                                     <p class="slider-text">Enhanced Engagement</p>
                                 </div>
                                 <!--item 2-->
@@ -142,8 +134,7 @@
 
                         </div>
                     </div>
-            </section>
-
+                </div>
             </div>
         </div>
     </article>
@@ -152,44 +143,36 @@
     <div class="container">
         <div class="row about-us-row2">
             <div id="video" class="col-md-6 col-sm-12 center-block">
-                <video width="100%" height="310" controls>
+                <video controls>
   <source src="assets/vendor/video/dashboards.mp4" type="video/mp4">
-  
-Your browser does not support the video tag.
+ Your browser does not support the video tag.
 </video>
-
             </div>
-
-
             <!--about video text -->
-
-
             <div class="col-md-6 col-sm-12 center-block">
                 <p class="general-paragraph about-us-text"><br><br> The benefits of engaging us to build a bespoke solution are numerous. Increase the speed and efficiency in producing such crucial information whilst eliminating potential errors in preparing such metrics manually. <br><br>In addition
                     you ensure that the information is beautifully presented and consistently styled each time you use it. The addition of the interactivity also drives user engagement to ensure everyone knows how your company is performing and the part
                     they play in it.</p>
-
             </div>
         </div>
     </div>
-
 
     <!--Dashboard -->
     <div id="dashboard" class="nav-container">
         <h4 class="section-headings"><br><br><br>What do the numbers tell us? <br></h4>
         <h4 class="section-headings">Dashboard<br></h4>
     </div>
-
     <section class="container-fluid dashboard" id="status">
 
-        <!-- Pre Loader -->
+    <!-- Pre Loader -->
         <div id="preloader">
-
         </div>
+        
+    <!--Bootstrap Grid System for charts-->    
         <div class="container">
             <div class="row">
                 <div class="hide-on-landscape">
-                    <img src="assets/vendor/images/rotate-device-image.png" class="rotate-screen-img charts"></img>
+                    <img src="assets/vendor/images/rotate-device-image.png" class="rotate-screen-img charts" alt="rotate mobile device image" />
                 </div>
             </div>
         </div>
@@ -212,8 +195,6 @@ Your browser does not support the video tag.
                 <p class="chart-title">Sales by Manager</p>
                 <div id="chart2" class="charts"></div>
             </div>
-
-
             <div class="hide-on-portrait col-sm-12 col-md-6 col-lg-4">
                 <p class="chart-title">Sales by Chain</p>
                 <div id="chart3" class="charts"></div>
@@ -226,24 +207,22 @@ Your browser does not support the video tag.
                 <p class="chart-title">Sales by Category</p>
                 <div id="chart5" class="charts"></div>
             </div>
-
             <div class="row">
-
                 <div class="hide-on-portrait col-sm-12 col-md-6 col-lg-4">
                     <p class="chart-title">Consolidated Sales by Period</p>
                     <div id="chart6" class="charts"></div>
                 </div>
-
             </div>
+           
+   <!--Record Count, Data Table, Reset and Table Navigation Buttons-->
             <div class="row">
                 <div class="hide-on-portrait col-md-4 col-sm-12">
-
                 </div>
                 <div class="hide-on-portrait col-md-4 col-sm-12">
                     <p class="table chart-title">Data Table</p>
                     <div>
                         <div class="hide-on-portrait dc-data-count">
-                            <span class="filter-count"></span>&nbspselected out of&nbsp<span class="total-count"></span> &nbsprecords<span></span>
+                            <span class="filter-count"></span>&nbsp;selected out of&nbsp;<span class="total-count"></span> &nbsp;records<span></span>
                         </div>
                         <div class="reset-btn">
                             <a href="javascript:dc.filterAll(); dc.renderAll(); " class="btn">Reset All</a>
@@ -251,7 +230,6 @@ Your browser does not support the video tag.
                     </div>
                 </div>
                 <div class="hide-on-portrait col-md-4 col-sm-12">
-
                 </div>
             </div>
             <div id="table-buttons" class="row">
@@ -266,28 +244,31 @@ Your browser does not support the video tag.
                     </table>
                 </div>
             </div>
+        </div>
     </section>
-    <div id="dashboard" class="nav-container">
+    <div class="nav-container">
         <h4 class="section-headings"><br><br><br>Google Maps</h4>
     </div>
+
+    <!--Google Maps API-->
     <section class="container google-maps-section center-block">
         <div class="row">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-12 col-xs-12">
                 <div class="charts api-text">
                     <p class="general-paragraph"><br>In addition to simply setting you up with the dashboard we also offer a complete website design and integration service. We can integrate various APIs to add additional value to your site. The google maps API is an example of this.
                         Here we are highlighting all the stores in the two chains, 'Fresh Look' and 'New You'. This highlights the various store locations so customers know where to find you. <br><br>Google can also provide your business with a number
                         of benefits for free. Register your business with Google Business and take advantage of some free advertising. Google will also display your business information such as contact phone numbers and office opening hours.<br><br></p>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-12">
-                <div class=" row charts">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                     <div id="map" class="charts google-api"></div>
                 </div>
             </div>
+        </div>
     </section>
 
     <!--Contact Us Containers and Bootstrap Grid-->
-
     <article id="contactus" class="container contact-us-container nav-container">
 
         <p class="text-uppercase section-headings"> <br><br><br>Contact Us </p>
@@ -324,21 +305,20 @@ Your browser does not support the video tag.
     </div>
 
     <!--Email subscription section-->
-
     <section class="container subscribe-container">
         <h2>Latest News</h2>
         <p>Sign up for regular updates on new products and services.</p>
 
 
         <form id="subscribe-form" class="form-inline justify-content-center" onsubmit="return submitEmailSubscription(this);" method="POST">
-            <input type="text" required="true" class="form-control" name="first_name" placeholder="First Name">
-            <input type="text" required="true" class="form-control" name="last_name" placeholder="Last Name">
-            <input type="email" required="true" class="form-control" name="email_subscribed" placeholder="Email">
+            <input type="text" required class="form-control" name="first_name" placeholder="First Name">
+            <input type="text" required class="form-control" name="last_name" placeholder="Last Name">
+            <input type="email" required class="form-control" name="email_subscribed" placeholder="Email">
             <button class="btn suscribe-btn"><i class="fa fa-envelope"></i>  Submit</button>
         </form>
     </section>
+   
     <!--Footer-->
-
     <footer class="container-fluid footer-container">
         <div class="container-fluid">
             <p class="social-footer">Our Social</p>
@@ -358,17 +338,13 @@ Your browser does not support the video tag.
     </footer>
 
     <!--Links to Google Maps API and my Google.maps.js file-->
-
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJZOqPZW-S62102GNDCDlkGH1-EhyOAJE&callback=initMap"></script>
-    <script type="text/javascript" src="assets/js/google.maps.js"></script>
+    <script src="assets/js/google.maps.js"></script>
 
     <!--Email JS-->
-
-
-
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script type="text/javascript">
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script>
         (function() {
             emailjs.init("user_A9WtbVPnDppaJKfQP11X7");
 
@@ -376,10 +352,7 @@ Your browser does not support the video tag.
     </script>
 
     <!--Link to senEmail.js file-->
-
     <script src="assets/js/sendEmail.js"></script>
-
-
 
 </body>
 

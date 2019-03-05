@@ -1,5 +1,7 @@
 //jQuery
 
+/*-----Hides Dashboard Elements on Loadining, this element fade in slow when renderAll() is executed in graph.js*/
+
 $(function() {
     $('.chart-title').hide();
     $('.table').hide();
@@ -13,7 +15,7 @@ $(function() {
 });
 
 
-//Nav bar code
+/*-----Code for NAV Bar Navigation on one page layout----------*/
 
 
 $(document).ready(function() {
@@ -36,7 +38,7 @@ $(document).ready(function() {
         })
     });
 
-    //Prevent default form reload behaviour
+    /*------Prevent default form reload behaviour--------*/
 
     $("form").on("submit", function(event) {
         event.preventDefault();
