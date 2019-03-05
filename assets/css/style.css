@@ -211,7 +211,9 @@ a.active {
 .container.subscribe-container {
     text-align: center;
     margin-top: 2.5em;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 
@@ -229,6 +231,8 @@ a.active {
     padding: 5px;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     cursor: pointer;
     margin-bottom: 0;
@@ -287,8 +291,12 @@ a.active {
 #table-buttons,
 .reset-btn {
     float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding-bottom: 4em;
     margin-top: 0.5em;
 }
@@ -362,7 +370,6 @@ button#last {
     background: white;
     height: 600px;
     -webkit-box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
     margin-bottom: 2em;
 }
@@ -378,7 +385,6 @@ button#last {
     margin-right: auto;
     height: 600px;
     -webkit-box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
 }
 
@@ -442,7 +448,8 @@ video {
     height: 100%;
     margin-top: 1em;
     background-color: white;
-    box-shadow: 3px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 3px 10px 48px -11px rgba(0, 0, 0, 0.75);
+            box-shadow: 3px 10px 48px -11px rgba(0, 0, 0, 0.75);
     padding: 1.5em;
     display: block;
     margin-left: auto;
@@ -468,7 +475,8 @@ section.container.google-maps-section.center-block {
 .about-us-row {
     padding-bottom: 2.5em;
     background-color: white;
-    box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
     margin-top: 2.5em;
     padding-top: .5em;
     min-height: 550px;
@@ -477,7 +485,8 @@ section.container.google-maps-section.center-block {
 .about-us-row2 {
     padding-bottom: 2.5em;
     background-color: white;
-    box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 10px 48px -11px rgba(0, 0, 0, 0.75);
     margin-top: 2.5em;
     padding-top: .5em;
 }
@@ -498,7 +507,8 @@ section.container.google-maps-section.center-block {
     background-color: white;
     padding-bottom: 2.5em;
     background-color: white;
-    box-shadow: 3px 10px 48px -11px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 3px 10px 48px -11px rgba(0, 0, 0, 0.75);
+            box-shadow: 3px 10px 48px -11px rgba(0, 0, 0, 0.75);
     margin: 1em;
     margin-top: 2.5em;
     padding-top: 2.5em;
@@ -515,8 +525,12 @@ section.container.google-maps-section.center-block {
 
 div.dc-chart {
     float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding-bottom: 2em;
     padding-top: 0;
     margin: 0;

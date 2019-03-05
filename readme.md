@@ -3,9 +3,9 @@ https://jaypeaa.github.io/milestone2/
 
 
 The project concept is from the perspective of a Technology Company ("Best Analytics") who produces dashboards and provides web design services.
-The main feature of the site is the dashboard which utilises D3, Crossfilter and DC.js.  It incorporates a number of interactive charts, a data count
-and a data table.  The 'Consolidated Sales Chart' includes a brush feature to easily select different time periods.
-
+The main feature of the site is the dashboard which utilises D3, Crossfilter and DC.js. The data used is a dummy dataset for two franshises "New You"
+and "Fresh Look". It incorporates a number of interactive charts, a data count and a data table.  The 'Consolidated Sales Chart' includes a 
+brush feature to easily select different time periods.
 
 ## UX
 
@@ -13,12 +13,15 @@ The project has been designed with the end user in mind.  The end user being bui
 business graphically on a company website. This might be to drive stakeholder engagement through the use of an interactive charting tool. 
 
 To enhance the user experience a more modern one page theme has been designed.  It utilises the HTML scroll feature and JQuery to scroll to various
-sections of the website.  As the user scroll down the page manually the nav bar highlights the current section the user is currently viewing.
+sections of the website.  As the user scrolls up & down the page the nav bar highlights the current section being viewed.
 
 A preloader has been included in the dashboard section to demonstrate to the user when data is loading.  Various elements have also been faded
 out on loading the page which fade back in to view slowly when loading is complete.  JQuery was used for this purpose.  Another aspect of the site
 is that when being viewed in portrait view on a mobile device an image is displayed instructing the user to rotate the device to landscape in order
 to view the dashboard.
+
+To prevent poor user experience when viewing the dashboard section of the site in portrait mode on mobile devices a place holder is displayed.  This
+communicates to the user the need to rotate the device to landscape view in order to view the dashboard.
 
 The flow of the site has been created in a more modern one page layout. Square edges and subtle use of shadow have been applied in order to make the
 various sections stand out. 
@@ -83,6 +86,8 @@ graph.js
 
 # Testing
 
+To ensure any links were entered correctly it was common practice to consol.log a simple 'hello' to the console prior to commencing coding.
+
 Testing has been conducted using google dev tools. Thorough testing in all the various mobile devices along with general responsiveness (responsive mode) has concluded
 that this site works well in all modern-day browsers and mobile devices. As part of the testing process each page has been reviewed systematically to ensure all links
 work as intended and the pages display correctly.  
@@ -93,16 +98,38 @@ All user forms display correctly and as intended on various displays / devices.
 
 Autoprefixer was used to ensure CSS is compatible in multiple browsers: https://autoprefixer.github.io/
 
+A common approach to testing code was to print to the console using console.log.  This was particulalry useful for testing conditions prior to 
+adding additional code and for viewing variable or array values.
+
 Browser Compatibility Testing:
 
 ### Issues Encountered
-Time was invested at the start of the project to ensure HTML code was working well before reusing the code for subsequent pages which saved some time.
 
-HTML and CSS Validators were used to clear any errors. 
+Time was invested at the start of the project to ensure HTML code and Bootstrap Classes were working as anticipated which saved some time on responsiveness
+testing later on.
+
+HTML and CSS Validators were used to clear any errors, however, CSS validation tends to highlight browser extentions as errors when they are actually required.
+
+One issue encountered was with the brush effect on the 'Consolidated Sales' line graph.  This issue appears to be intermittent and an issue with chrome
+rather than the underlying code.  In order to investigate this I tested the site on other machines and browsers and in certain instances I was unable
+to recreate the issue.  That said this issue does not appear to imapct the sites ability to function as intended. 
+
+Issues were encountered with the forms defualt reload behaviour which conflicted with my one page design.  The following custom Jquery was written to mitigate
+these issues:
+
+$("form").on("submit", function(event) {
+        event.preventDefault();
+    })
+    
+One of the bootstrap defaults in my navbar was creating overflow Y so it was necessary to override the bootstrap style with custom CSS.  On occassion this 
+meant using !Important to achieve this.
+
+Some minor modifications were made to the layout of my design post wireframing which were straighforward to implement. This was done in order to
+achieve more balance visually.
 
 # Deployment
 
-Throughout the projects regular git commits were made to ensure any working files were backed up. In excess of 20 commits have been logged on the main branch in GitHub.
+Throughout the projects regular git commits were made to ensure any working files were backed up. Numerous commits have been logged on the main branch in GitHub.
 The project has been successfully deployed on GitHub pages.  There is only one main branch in GitHub for this project.
 
 AWS cloud9 has been used throughout this project as the IDE of choice.  
@@ -115,34 +142,26 @@ The project has been organised in the following structure:
 
 * milestone2 (Project Folder)
 * assets (folder)
+    * css (folder)
+    * data (folder)
+    * davicon
+    * js (folder)
     * vendor (folder)
         * images (folder)
         * video (folder)
-    * css (folder)
-        *animate.css (file)
-        *bootstrap.min.css (file)
-        *style.css (file)
-    *js (folder)
-        *customJqry (file)
-    *vendor (folder)
-        *images (folder)
-        *video (folder)
-    *Data (folder)
+   
 
-Index.html and Readme.md are both located in the main project folder.
+Index.html and Readme.md are both located in the main project folder as are the wireframes for the initial design.
 
-The vendor folder contains any 3rd party assets such as photos, video and audio materials for which proper approval has been sort for reuse prior to posting.
+The vendor folder contains any 3rd party assets such as photos, video and audio materials for which proper approval has been attained prior to use.
 
 # Credits
 
-Some text was taken from Wikipedia for use on this site as this project is for educational purposes only (https://en.wikipedia.org/wiki/Economic_inequality).
 The favicon was generated by a 3rd party site: https://favicon.io/favicon-generator/. 
 
 
 # Images and Media
 
 All images and media used on this site have been labelled for reuse / non-commercial and are for educational purposes only.  Google images licensing tools
-have been utilised in sourcing content where content has not been provided by the code institute specifically. Express consent has been attained via email
-for any other 3rd party content.
+have been utilised in sourcing content. Express consent has been attained via email for any other 3rd party content namely the video.
 
-Credit for header image: By Sanjiban ghosh - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=37475284
