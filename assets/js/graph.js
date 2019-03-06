@@ -54,6 +54,8 @@ function makeGraphs(error, salesData) {
     $('#next').fadeIn('slow');
     $('#last').fadeIn('slow');
     $('.rotate-screen-img').fadeIn('slow');
+    $('.rotate-text').fadeIn('slow');
+  
     
 /*----------------------Graph Construction---------------*/
 

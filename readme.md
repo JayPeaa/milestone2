@@ -136,6 +136,10 @@ $("form").on("submit", function(event) { event.preventDefault(); })
 Some minor modifications were made to the layout of my design post wireframing which 
 were straightforward to implement. This was done in order to achieve more balance visually.
 
+It was necessary to take a different approach with regards the one page scrolling.  Initially a combination of jQuery and CSS ('HTML Scroll 
+Property') were utilised. It became clear during testing that this did not work on all browsers. The CSS HTML Scroll property has been removed and this animation
+effect is also handled by jQuery.
+
 # Deployment
 
 Throughout the projects regular git commits were made to ensure any working files were backed up. Numerous commits have been logged on the main branch in GitHub. The project has been successfully deployed on GitHub pages.  

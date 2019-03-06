@@ -4,9 +4,9 @@ font-family: 'PT Serif', serif;*/
 
 /*---------NAV Scroll Effect--------*/
 
-html {
+/*html {
     scroll-behavior: smooth;
-}
+}*/
 
 .row {
     margin: 0;
@@ -111,8 +111,13 @@ p {
 }
 
 .navbar-inverse .navbar-nav>.active>a {
-    color: #fec606;
+    color: #fec606!important; 
+    background-color: transparent!important;
 }
+
+
+    
+
 
 .navbar-brand {
     font-size: 2em;
@@ -147,10 +152,6 @@ p {
     border-color: silver;
     border-width: 2px;
     padding: 0;
-}
-
-.navbar-inverse .navbar-nav>.active>a {
-    background-color: transparent;
 }
 
 .navlogo {
@@ -285,7 +286,10 @@ a.active {
     left: 0;
     right: 0;
     max-width: 40px;
+}
 
+a#continue-arrow {
+    text-decoration: none;
 }
 
 #table-buttons,
@@ -573,8 +577,10 @@ img.rotate-screen-img.charts {
     margin-right: auto;
     left: 0;
     right: 0;
+}
 
-
+.rotate-text{
+    text-align: center;
 }
 
 /*-----------Media Queries-------*/
