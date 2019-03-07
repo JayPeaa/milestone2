@@ -150,6 +150,9 @@ effect is also handled by jQuery.
 The dashboard did not run as intended on Mozilla Firefox version 64, however, updating to the latest version fixed the issue suggesting that the earlier
 version may have contained some bugs.
 
+Internet Explorer does not support the Linear Gradient CSS property and consequently my background image did not display. To fix this issue the header
+iamge was edited outside of CSS using PINETOOLS editing online (https://pinetools.com/darken-image).
+
 # Deployment
 
 Throughout the projects regular git commits were made to ensure any working files were backed up. Numerous commits have been logged on the main branch in GitHub. The project has been successfully deployed on GitHub pages.  

@@ -2,11 +2,7 @@
 /*font-family: 'Mukta', sans-serif;
 font-family: 'PT Serif', serif;*/
 
-/*---------NAV Scroll Effect--------*/
-
-/*html {
-    scroll-behavior: smooth;
-}*/
+/*--Bootstrap fix to rectify overflow Y issue--*/
 
 .row {
     margin: 0;
@@ -34,7 +30,8 @@ font-family: 'PT Serif', serif;*/
     padding: 0;
     margin: 0;
     display: block;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../vendor/images/header-image.jpg") no-repeat center center fixed;
+    width: 100%;
+    background: url("../vendor/images/header-image.jpg") no-repeat center center fixed;
     background-size: cover;
     border-bottom: solid;
     border-color: silver;
@@ -115,10 +112,6 @@ p {
     color: #fec606!important; 
     background-color: transparent!important;
 }
-
-
-    
-
 
 .navbar-brand {
     font-size: 2em;
@@ -242,6 +235,7 @@ a.active {
     max-width: 150px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 .btn:hover {
@@ -270,7 +264,7 @@ a.active {
     border-color: white;
     text-shadow: none;
     font-size: 30px;
-    position: absolute;
+    position: relative;
     bottom: -15vh;
     /* right: 46%; */
     -webkit-animation-name: flashing;
@@ -302,15 +296,10 @@ a#continue-arrow {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding-bottom: 4em;
-    margin-top: 0.5em;
-}
-
-.reset-btn {
-    margin: 0;
     padding: 1em;
+    margin-top: 0;
+    position: relative;
 }
-
 
 @-webkit-keyframes flashing {
     from {
@@ -343,6 +332,7 @@ a.btn {
 button#next,
 button#last {
     display: inline-block;
+    position:relative;
 }
 
 
