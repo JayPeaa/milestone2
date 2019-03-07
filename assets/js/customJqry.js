@@ -43,6 +43,20 @@ $(document).ready(function() {
         }, 1000);
 
     })
+    
+    var contactScrollLink = $('.contact-us-scroll');
+
+    /*---------For Smooth Scroll Effect on Arrow Down Indicator--------------*/
+
+    contactScrollLink.click(function(event) {
+        event.preventDefault();
+        $('body,html').animate({
+            scrollTop: $(this.hash).offset().top
+        }, 1000);
+
+    })
+    
+    
 
     /*------Prevent default form reload behaviour--------*/
 

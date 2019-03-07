@@ -1,4 +1,3 @@
-
 function initMap() {
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 4,
@@ -6,7 +5,7 @@ function initMap() {
             lat: 50.736129,
             lng: -1.988229
         }
-    });
+    })
 
     var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

@@ -36,9 +36,9 @@ function makeGraphs(error, salesData) {
 /*-----Interger Conversion and Date Formatting Loop----*/
 
     salesData.forEach(function(d) {
-        d.sales = parseInt(d.Sales)
-        d.month = d.Month.getMonth()
-    })
+        d.sales = parseInt(d.Sales);
+        d.month = d.Month.getMonth();
+    });
 
 /*-----------------Render the charts------------------*/
 
@@ -63,13 +63,13 @@ function makeGraphs(error, salesData) {
         var dim = ndx.dimension(dc.pluck("Region"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
-        let barColors = d3.scale.ordinal().range(["#EA3500", "#FEC928", "#8CE888", "#093F9B", "#282828"])
+        let barColors = d3.scale.ordinal().range(["#EA3500", "#FEC928", "#8CE888", "#093F9B", "#282828"]);
 
         salesByCountry
             .width(360)
             .height(300)
             .colorAccessor(function(d) {
-                return d.key
+                return d.key;
             })
             .colors(barColors)
             .margins({ top: 10, right: 50, bottom: 40, left: 65 })
@@ -88,13 +88,13 @@ function makeGraphs(error, salesData) {
         var dim = ndx.dimension(dc.pluck("Manager"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
-        let barColors = d3.scale.ordinal().range(["#EA3500", "#EA3500", "#8CE888", "#8CE888", "#FEC928", "#FEC928", "#093F9B", "#282828"])
+        let barColors = d3.scale.ordinal().range(["#EA3500", "#EA3500", "#8CE888", "#8CE888", "#FEC928", "#FEC928", "#093F9B", "#282828"]);
 
         salesByManager
             .width(360)
             .height(300)
             .colorAccessor(function(d) {
-                return d.key
+                return d.key;
             })
             .colors(barColors)
             .margins({ top: 10, right: 50, bottom: 40, left: 65 })
@@ -113,13 +113,13 @@ function makeGraphs(error, salesData) {
         var dim = ndx.dimension(dc.pluck("Category"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
-        let barColors = d3.scale.ordinal().range(["#4C73B6"])
+        let barColors = d3.scale.ordinal().range(["#4C73B6"]);
 
         salesByCategory
             .width(360)
             .height(300)
             .colorAccessor(function(d) {
-                return d.key
+                return d.key;
             })
             .colors(barColors)
             .margins({ top: 10, right: 50, bottom: 40, left: 65 })
@@ -138,18 +138,18 @@ function makeGraphs(error, salesData) {
         var dim = ndx.dimension(dc.pluck("Chain"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
-        let barColors = d3.scale.ordinal().range(["#093F9B", "#8CE888"])
+        let barColors = d3.scale.ordinal().range(["#093F9B", "#8CE888"]);
 
         chainPieChart
             .height(300)
             .radius(130)
             .colorAccessor(function(d) {
-                return d.key
+                return d.key;
             })
             .colors(barColors)
             .dimension(dim)
             .group(group)
-            .transitionDuration(1500)
+            .transitionDuration(1500);
     }
 
     function show_sales_by_chain_line(ndx) {
@@ -157,7 +157,7 @@ function makeGraphs(error, salesData) {
         var parseDate = d3.time.format("%d/%m/%Y").parse;
         salesData.forEach(function(d) {
             d.Month = parseDate(d.Month);
-        })
+        });
 
         var month_dim = ndx.dimension(dc.pluck("Month"));
         var total_sales_per_month = month_dim.group().reduceSum(dc.pluck("Sales"));
@@ -202,7 +202,7 @@ function makeGraphs(error, salesData) {
                 .group(freshLookSales, "Fesh Look")
             ])
 
-            .brushOn(false)
+            .brushOn(false);
     }
 
     function show_consolidated_sales_line(ndx) {
@@ -231,13 +231,13 @@ function makeGraphs(error, salesData) {
         var dim = ndx.dimension(dc.pluck("FinancialYear"));
         var group = dim.group().reduceSum(dc.pluck('Sales'));
 
-        let barColors = d3.scale.ordinal().range(["#4C73B6"])
+        let barColors = d3.scale.ordinal().range(["#4C73B6"]);
 
         financialYearChart
             .width(360)
             .height(300)
             .colorAccessor(function(d) {
-                return d.key
+                return d.key;
             })
             .colors(barColors)
             .margins({ top: 10, right: 50, bottom: 40, left: 65 })
@@ -277,37 +277,37 @@ function makeGraphs(error, salesData) {
                 {
                     label: "Month",
                     format: function(d) {
-                        return d.MonthText
+                        return d.MonthText;
                     },
                 },
                 {
                     label: "Chain",
                     format: function(d) {
-                        return d.Chain
+                        return d.Chain;
                     },
                 },
                 {
                     label: "Region",
                     format: function(d) {
-                        return d.Region
+                        return d.Region;
                     },
                 },
                 {
                     label: "Manager",
                     format: function(d) {
-                        return d.Manager
+                        return d.Manager;
                     },
                 },
                 {
                     label: "Category",
                     format: function(d) {
-                        return d.Category
+                        return d.Category;
                     },
                 },
                 {
                     label: "Sales",
                     format: function(d) {
-                        return d.Sales
+                        return d.Sales;
                     },
                 },
             ]);
@@ -317,7 +317,6 @@ function makeGraphs(error, salesData) {
 
         function update_offset() {
             var totFilteredRecs = ndx.groupAll().value();
-            var end = ofs + pag > totFilteredRecs ? totFilteredRecs : ofs + pag;
             ofs = ofs >= totFilteredRecs ? Math.floor((totFilteredRecs - 1) / pag) * pag : ofs;
             ofs = ofs < 0 ? 0 : ofs;
             recordTable.beginSlice(ofs);
