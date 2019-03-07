@@ -265,7 +265,7 @@ a.active {
     text-shadow: none;
     font-size: 30px;
     position: relative;
-    bottom: -15vh;
+    bottom: -13vh;
     /* right: 46%; */
     -webkit-animation-name: flashing;
     animation-name: flashing;
@@ -616,6 +616,18 @@ img.rotate-screen-img.charts {
     }
 
 
+}
+
+@media (min-width: 567px) and (max-width:569px) {
+    .fa-arrow-down{
+        bottom: -2vh;
+    }
+}
+
+@media (min-width: 811px) and (max-width:813px) {
+    .fa-arrow-down{
+        bottom: -10vh;
+    }
 }
 
 @media (min-width: 551px) and (max-width:768px) {
