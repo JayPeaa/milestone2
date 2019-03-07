@@ -150,8 +150,13 @@ effect is also handled by jQuery.
 The dashboard did not run as intended on Mozilla Firefox version 64, however, updating to the latest version fixed the issue suggesting that the earlier
 version may have contained some bugs.
 
-Internet Explorer does not support the Linear Gradient CSS property and consequently my background image did not display. To fix this issue the header
-iamge was edited outside of CSS using PINETOOLS editing online (https://pinetools.com/darken-image).
+Internet Explorer does not support the Linear Gradient CSS property and consequently the background image did not display. To fix this issue the header
+iamge was edited outside of CSS using PINETOOLS editing online (https://pinetools.com/darken-image). Internet Explorer also required anditional CSS in order to display the various buttons on the page correctly (Position Relative) which was not required for
+any other browser.
+
+On occassion the dashboard fails to load completely on Internet Explorer and the data table, data count and navigation buttons fail to load for no apparent 
+reason.  This issue only seems to occur in this browser.  All the features function as normal on all other browsers including Microsoft Edge which
+is superseeding Internet Explorer.  A number of sites no loner support Internet Explorer for this reason.
 
 # Deployment
 

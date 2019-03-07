@@ -28,7 +28,7 @@ $(document).ready(function() {
                 $(this).parent().addClass('active');
                 $(this).parent().siblings().removeClass('active');
             }
-        })
+        });
 
     });
 
@@ -42,7 +42,7 @@ $(document).ready(function() {
             scrollTop: $(this.hash).offset().top
         }, 1000);
 
-    })
+    });
     
     var contactScrollLink = $('.contact-us-scroll');
 
@@ -54,7 +54,7 @@ $(document).ready(function() {
             scrollTop: $(this.hash).offset().top
         }, 1000);
 
-    })
+    });
     
     
 
@@ -77,4 +77,4 @@ $(document).ready(function() {
         $('.rotate-text').hide();
     });
 
-})
+});
